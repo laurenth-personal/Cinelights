@@ -1,0 +1,2667 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 337831424, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Cinelights
+  m_EditorClassIdentifier: 
+  m_NextId: 0
+  m_Tracks:
+  - {fileID: 114734382466260030}
+  - {fileID: 114088175736139248}
+  - {fileID: 114702216580809282}
+  - {fileID: 114053941980051042}
+  - {fileID: 114684382933974640}
+  m_FixedDuration: 0
+  m_EditorSettings:
+    fps: 60
+  m_DurationMode: 0
+--- !u!114 &114027087860702714
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 442072544, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: ActivationPlayableAsset
+  m_EditorClassIdentifier: 
+--- !u!114 &114053941980051042
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Challenger Helmet
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: 114886912668738132}
+  - {fileID: 114113664867622640}
+  - {fileID: 114722092817672404}
+  - {fileID: 114307806408574642}
+  m_Clips: []
+--- !u!114 &114088175736139248
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 46519060, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Activation Track (1)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Start: 4.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114985879021719934}
+    m_UnderlyingAsset: {fileID: 114027087860702714}
+    m_Duration: 3.8166666666666673
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114088175736139248}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Active
+    m_Version: 1
+  - m_Start: 12.783333333333335
+    m_ClipIn: 0
+    m_Asset: {fileID: 114928191510978256}
+    m_UnderlyingAsset: {fileID: 114027087860702714}
+    m_Duration: 3.8166666666666673
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114088175736139248}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Active
+    m_Version: 1
+  m_PostPlaybackState: 0
+--- !u!114 &114113664867622640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114053941980051042}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 114841213521289074}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 4.483333333333333
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114113664867622640}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 3.8166666666666673
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Key
+    m_Version: 1
+  - m_Start: 8.3
+    m_ClipIn: 0
+    m_Asset: {fileID: 114835970198527134}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 2.4166666666666665
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114113664867622640}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 1.4000000000000004
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 3.8166666666666673
+    m_DisplayName: Key
+    m_Version: 1
+  - m_Start: 9.316666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: 114305838659302230}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 3.466666666666667
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114113664867622640}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 1.4000000000000004
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Key
+    m_Version: 1
+--- !u!114 &114128631597006892
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Fill
+      linkToCameraRotation: 0
+      Yaw: 100
+      Pitch: 27.8
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.865788, b: 0.822, a: 1}
+      intensity: 5
+      indirectIntensity: 1
+      lightAngle: 8.3
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114148743831089978
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Fill
+      linkToCameraRotation: 0
+      Yaw: 110
+      Pitch: -7.3
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.844504, b: 0.772, a: 1}
+      intensity: 2
+      indirectIntensity: 0
+      lightAngle: 13.5
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114206992173312334
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: 22
+      Pitch: 17.7
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.951664, b: 0.841, a: 1}
+      intensity: 20
+      indirectIntensity: 1
+      lightAngle: 14.7
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.51
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114223874071454032
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset of Chal_Idle
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_UseTrackMatchFields: 0
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+--- !u!114 &114253052482062948
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: 22
+      Pitch: 17.7
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.8717521, b: 0.691, a: 1}
+      intensity: 20
+      indirectIntensity: 1
+      lightAngle: 14.7
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.51
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114255029439119262
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: 94
+      Pitch: 90
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 1, b: 1, a: 1}
+      intensity: 20
+      indirectIntensity: 1
+      lightAngle: 8.8
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.51
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114281290596780838
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Fill
+      linkToCameraRotation: 0
+      Yaw: 94
+      Pitch: -12.6
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 0.578, g: 0.78731203, b: 1, a: 1}
+      intensity: 5
+      indirectIntensity: 1
+      lightAngle: 13.1
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.51
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114302887047428278
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset of Chal_Idle
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_UseTrackMatchFields: 0
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+--- !u!114 &114305838659302230
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: 106
+      Pitch: -19.6
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.43382356, b: 0.19117647, a: 1}
+      intensity: 15
+      indirectIntensity: 1
+      lightAngle: 10.4
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114307806408574642
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track (3)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114053941980051042}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0.0000000008998924938552477
+    m_ClipIn: 0
+    m_Asset: {fileID: 114737165599023710}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 4.483333333333333
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114307806408574642}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 3.8166666657667747
+    m_PreExtrapolationTime: 0.0000000008998924938552477
+    m_DisplayName: RimRight
+    m_Version: 1
+  - m_Start: 8.3
+    m_ClipIn: 0
+    m_Asset: {fileID: 114719898372779992}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 2.416666666666666
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114307806408574642}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: 1.4000000000000004
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 3.8166666657667747
+    m_DisplayName: RimRight
+    m_Version: 1
+  - m_Start: 9.316666666666666
+    m_ClipIn: 0
+    m_Asset: {fileID: 114986620035002416}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 3.466666666666667
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114307806408574642}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 1.4000000000000004
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0
+    m_DisplayName: RimRight
+    m_Version: 1
+--- !u!114 &114352279436686496
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Fill
+      linkToCameraRotation: 0
+      Yaw: 100
+      Pitch: 27.8
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.865788, b: 0.822, a: 1}
+      intensity: 5
+      indirectIntensity: 1
+      lightAngle: 8.3
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114422681508669834
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1467732076, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Animation Track
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114684382933974640}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0.5833333333333334
+    m_ClipIn: 0
+    m_Asset: {fileID: 114302887047428278}
+    m_UnderlyingAsset: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+    m_Duration: 8.3
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114422681508669834}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 1
+    m_PreExtrapolationMode: 1
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0.5833333333333334
+    m_DisplayName: Chal_Idle
+    m_Version: 1
+  - m_Start: 8.883333333333335
+    m_ClipIn: 0
+    m_Asset: {fileID: 114441309806340944}
+    m_UnderlyingAsset: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+    m_Duration: 8.3
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114422681508669834}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 1
+    m_PreExtrapolationMode: 1
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Chal_Idle
+    m_Version: 1
+  m_OpenClipPreExtrapolation: 0
+  m_OpenClipPostExtrapolation: 0
+  m_OpenClipOffsetPosition: {x: 0, y: 0, z: 0}
+  m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_OpenClipTimeOffset: 0
+  m_MatchTargetFields: 63
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ApplyOffsets: 0
+  m_AvatarMask: {fileID: 0}
+  m_ApplyAvatarMask: 1
+--- !u!114 &114423447190178092
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Rim Cool
+      linkToCameraRotation: 0
+      Yaw: -122
+      Pitch: 23.5
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 0.791, g: 0.8934624, b: 1, a: 1}
+      intensity: 30
+      indirectIntensity: 1
+      lightAngle: 25.3
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114441309806340944
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset of Chal_Idle
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_UseTrackMatchFields: 0
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+--- !u!114 &114468327367939800
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 2024714994, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: AnimationPlayableAsset of Chal_Idle
+  m_EditorClassIdentifier: 
+  m_Clip: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_UseTrackMatchFields: 0
+  m_MatchTargetFields: 63
+  m_RemoveStartOffset: 1
+--- !u!114 &114573159739602974
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track (1)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114684382933974640}
+  m_Children: []
+  m_Clips:
+  - m_Start: 4.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114206992173312334}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 3.8166666666666673
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114573159739602974}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 4.4833333333333325
+    m_PreExtrapolationTime: 4.483333333333333
+    m_DisplayName: Key
+    m_Version: 1
+  - m_Start: 12.783333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114253052482062948}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 1.8
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114573159739602974}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0.882
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve: []
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0.13333333333333286
+    m_PreExtrapolationTime: 4.4833333333333325
+    m_DisplayName: Key
+    m_Version: 1
+  - m_Start: 14.716666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 114255029439119262}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 1.8833333333333346
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114573159739602974}
+    m_EaseInDuration: 0.882
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0.13333333333333286
+    m_DisplayName: Key
+    m_Version: 1
+--- !u!114 &114684382933974640
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: -1544527758, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Challenger
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children:
+  - {fileID: 114422681508669834}
+  - {fileID: 114573159739602974}
+  - {fileID: 114897015680122438}
+  - {fileID: 114701284857102322}
+  m_Clips: []
+--- !u!114 &114701284857102322
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track (5)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114684382933974640}
+  m_Children: []
+  m_Clips:
+  - m_Start: 4.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114148743831089978}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 3.8166666666666673
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114701284857102322}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 4.483333333333334
+    m_PreExtrapolationTime: 4.483333333333333
+    m_DisplayName: Fill
+    m_Version: 1
+  - m_Start: 12.783333333333335
+    m_ClipIn: 0
+    m_Asset: {fileID: 114907144177669908}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 1.799999999999999
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114701284857102322}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0.8819999999999995
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 4.483333333333334
+    m_DisplayName: Fill
+    m_Version: 1
+--- !u!114 &114702216580809282
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 46519060, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Activation Track (2)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips: []
+  m_PostPlaybackState: 0
+--- !u!114 &114719898372779992
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: RimRight
+      linkToCameraRotation: 0
+      Yaw: -79
+      Pitch: 9.2
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 0.841, g: 0.9189499, b: 1, a: 1}
+      intensity: 15
+      indirectIntensity: 1
+      lightAngle: 15.2
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114722092817672404
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track (2)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114053941980051042}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 114352279436686496}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 4.483333333333333
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114722092817672404}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 3.8166666666666673
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Fill
+    m_Version: 1
+  - m_Start: 8.3
+    m_ClipIn: 0
+    m_Asset: {fileID: 114128631597006892}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 2.416666666666666
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114722092817672404}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 1.1841666666666664
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 3.8166666666666673
+    m_DisplayName: Fill
+    m_Version: 1
+--- !u!114 &114734382466260030
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 46519060, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Activation Track
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 11400000}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 114027087860702714}
+    m_UnderlyingAsset: {fileID: 114027087860702714}
+    m_Duration: 4.483333333333333
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114734382466260030}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Active
+    m_Version: 1
+  - m_Start: 8.3
+    m_ClipIn: 0
+    m_Asset: {fileID: 114841325568153130}
+    m_UnderlyingAsset: {fileID: 114027087860702714}
+    m_Duration: 4.483333333333333
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114734382466260030}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: 0
+    m_BlendOutDuration: 0
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Active
+    m_Version: 1
+  m_PostPlaybackState: 0
+--- !u!114 &114737165599023710
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: RimRight
+      linkToCameraRotation: 0
+      Yaw: -79
+      Pitch: 9.2
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 0.841, g: 0.9189499, b: 1, a: 1}
+      intensity: 15
+      indirectIntensity: 1
+      lightAngle: 15.2
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114793863576526624
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Rim Cool
+      linkToCameraRotation: 0
+      Yaw: -122
+      Pitch: 23.5
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 0.598, g: 0.82867414, b: 1, a: 1}
+      intensity: 30
+      indirectIntensity: 1
+      lightAngle: 25.3
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114835970198527134
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: 180
+      Pitch: 41.1
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.93068796, b: 0.772, a: 1}
+      intensity: 25
+      indirectIntensity: 1
+      lightAngle: 10.4
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114841213521289074
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Key
+      linkToCameraRotation: 0
+      Yaw: -173
+      Pitch: 41.1
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 7
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.93068796, b: 0.772, a: 1}
+      intensity: 25
+      indirectIntensity: 1
+      lightAngle: 10.4
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114841325568153130
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 442072544, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: ActivationPlayableAsset
+  m_EditorClassIdentifier: 
+--- !u!114 &114886912668738132
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 1467732076, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: Animation Track1
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114053941980051042}
+  m_Children: []
+  m_Clips:
+  - m_Start: 0
+    m_ClipIn: 0
+    m_Asset: {fileID: 114468327367939800}
+    m_UnderlyingAsset: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+    m_Duration: 8.3
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114886912668738132}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 1
+    m_PreExtrapolationMode: 1
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Chal_Idle
+    m_Version: 1
+  - m_Start: 8.3
+    m_ClipIn: 0
+    m_Asset: {fileID: 114223874071454032}
+    m_UnderlyingAsset: {fileID: 7400000, guid: 61a7bdf7c96ba0347b458dd83b4ea4bd, type: 3}
+    m_Duration: 8.3
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114886912668738132}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 1
+    m_PreExtrapolationMode: 1
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0
+    m_DisplayName: Chal_Idle
+    m_Version: 1
+  m_OpenClipPreExtrapolation: 0
+  m_OpenClipPostExtrapolation: 0
+  m_OpenClipOffsetPosition: {x: 0, y: 0, z: 0}
+  m_OpenClipOffsetRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_OpenClipTimeOffset: 0
+  m_MatchTargetFields: 63
+  m_Position: {x: 0, y: 0, z: 0}
+  m_Rotation: {x: 0, y: 0, z: 0, w: 1}
+  m_ApplyOffsets: 0
+  m_AvatarMask: {fileID: 0}
+  m_ApplyAvatarMask: 1
+--- !u!114 &114897015680122438
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 014274311cb4f6b458d92ceb60904be6, type: 3}
+  m_Name: Cine Light Track (4)
+  m_EditorClassIdentifier: 
+  m_Locked: 0
+  m_Muted: 0
+  m_CustomPlayableFullTypename: 
+  m_AnimClip: {fileID: 0}
+  m_Parent: {fileID: 114684382933974640}
+  m_Children: []
+  m_Clips:
+  - m_Start: 4.483333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114423447190178092}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 3.8166666666666673
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114897015680122438}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 4.4833333333333325
+    m_PreExtrapolationTime: 4.483333333333333
+    m_DisplayName: Rim Cool
+    m_Version: 1
+  - m_Start: 12.783333333333333
+    m_ClipIn: 0
+    m_Asset: {fileID: 114793863576526624}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 1.8000000000000007
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114897015680122438}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0.8820000000000003
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0.13333333333333286
+    m_PreExtrapolationTime: 4.4833333333333325
+    m_DisplayName: Rim Cool
+    m_Version: 1
+  - m_Start: 14.716666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 114281290596780838}
+    m_UnderlyingAsset: {fileID: 114841213521289074}
+    m_Duration: 1.8833333333333346
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114897015680122438}
+    m_EaseInDuration: 0.882
+    m_EaseOutDuration: 0
+    m_BlendInDuration: -1
+    m_BlendOutDuration: -1
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 2
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      - serializedVersion: 2
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: Infinity
+    m_PreExtrapolationTime: 0.13333333333333286
+    m_DisplayName: Fill
+    m_Version: 1
+--- !u!114 &114907144177669908
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: Fill
+      linkToCameraRotation: 0
+      Yaw: 110
+      Pitch: -7.3
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.554654, b: 0.347, a: 1}
+      intensity: 2
+      indirectIntensity: 0
+      lightAngle: 13.5
+      shadows: 2
+      shadowQuality: 3
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114928191510978256
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 442072544, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: ActivationPlayableAsset
+  m_EditorClassIdentifier: 
+--- !u!114 &114985879021719934
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 442072544, guid: 6a10b2909283487f913b00d94cd3faf5, type: 3}
+  m_Name: ActivationPlayableAsset
+  m_EditorClassIdentifier: 
+--- !u!114 &114986620035002416
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: RimRight
+      linkToCameraRotation: 0
+      Yaw: -79
+      Pitch: 9.2
+      Roll: 0
+      distance: 5
+      offset: {x: 0, y: 0.7, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 8
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.99888796, b: 0.722, a: 1}
+      intensity: 50
+      indirectIntensity: 1
+      lightAngle: 15.2
+      shadows: 2
+      shadowQuality: 2
+      ShadowNearClip: 4.47
+      shadowBias: 0.01
+      shadowNormalBias: 0.1
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      shape: 0
+      innerConeAngle: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
