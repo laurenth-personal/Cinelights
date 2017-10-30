@@ -1,5 +1,7 @@
 # Cinelights
-Light entity dedicated to cinematic lighting
+Light entity dedicated to cinematic lighting.
+
+Tested in Unity 2017.2.0f3
 
 # How to use
 
