@@ -1,0 +1,17 @@
+
+Library/*
+Temp/*
+obj/*
+*.csproj
+*.sln
+*.suo
+DataSource/*
+*.mdb
+*.browser
+*.map
+*.ini
+*.resS
+*.exe
+*.aspx
+*.sdf
+*.userprefs

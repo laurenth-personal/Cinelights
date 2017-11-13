@@ -69,6 +69,9 @@ public class CineLightMixer : PlayableBehaviour {
         neutralLightParameters.shadowBias = mixedLightParameters.shadowBias = 0;
         neutralLightParameters.shadowNormalBias = mixedLightParameters.shadowNormalBias = 0;
         neutralLightParameters.ShadowNearClip = mixedLightParameters.ShadowNearClip = 0;
+		neutralLightParameters.shadowStrength = mixedLightParameters.shadowStrength = 0;
+		neutralLightParameters.maxSmoothness = mixedLightParameters.maxSmoothness = 0;
+		neutralLightParameters.innerSpotPercent = mixedLightParameters.innerSpotPercent = 0;
 
         CineLightParameters neutralCineLightParameters = new CineLightParameters();
         neutralCineLightParameters.Yaw = 0;
@@ -120,6 +123,9 @@ public class CineLightMixer : PlayableBehaviour {
                 var data = ((ScriptPlayable<CineLightClipPlayable>)inputHandle).GetBehaviour();
                 if (data != null)
                 {
+					var lerpedLightParameters = new LightParameters();
+					lerpedLightParameters = LightingUtilities.LerpLightParameters (neutralLightParameters, data.lightParameters, isFading ? 1 : weight);
+
                     mixedCineLightParameters.Yaw += Mathf.Lerp(neutralCineLightParameters.Yaw, data.cinelightParameters.Yaw, isFading ? 1 : weight);
                     mixedCineLightParameters.Pitch += Mathf.Lerp(neutralCineLightParameters.Pitch, data.cinelightParameters.Pitch, isFading ? 1 : weight);
                     mixedCineLightParameters.Roll += Mathf.Lerp(neutralCineLightParameters.Roll, data.cinelightParameters.Roll, isFading ? 1 : weight);
@@ -128,23 +134,25 @@ public class CineLightMixer : PlayableBehaviour {
                     mixedCineLightParameters.linkToCameraRotation = data.cinelightParameters.linkToCameraRotation;
                     if(weight>0.5f)
                     {
-                        cineLight.drawGizmo = data.cinelightParameters.drawGizmo;
+	                    cineLight.drawGizmo = data.cinelightParameters.drawGizmo;
                     }
-
-                    mixedLightParameters.intensity += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, weight).intensity;
-                    mixedLightParameters.range += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).range;
-                    mixedLightParameters.colorFilter += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).colorFilter;
-                    mixedLightParameters.lightAngle += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).lightAngle;
-                    if(weight>0.5f)
-                    {
-                        mixedLightParameters.shadows = data.lightParameters.shadows;
-                        mixedLightParameters.cullingMask = data.lightParameters.cullingMask;
-                        mixedLightParameters.shadowQuality = data.lightParameters.shadowQuality;
-                        mixedLightParameters.shadows = data.lightParameters.shadows;
-                    }
-                    mixedLightParameters.shadowNormalBias += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).shadowNormalBias;
-                    mixedLightParameters.ShadowNearClip += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).ShadowNearClip;
-                    mixedLightParameters.shadowBias += LightEditorUtilities.LerpLightParameters(neutralLightParameters, data.lightParameters, isFading ? 1 : weight).shadowBias;
+					if(weight==1 || isFading)
+						mixedLightParameters.shadows = data.lightParameters.shadows;
+					
+					mixedLightParameters.intensity += Mathf.Lerp(neutralLightParameters.intensity,data.lightParameters.intensity,weight);
+                    mixedLightParameters.range += lerpedLightParameters.range;
+                    mixedLightParameters.colorFilter += lerpedLightParameters.colorFilter;
+                    mixedLightParameters.lightAngle += lerpedLightParameters.lightAngle;
+					mixedLightParameters.cullingMask = lerpedLightParameters.cullingMask;
+					mixedLightParameters.shadowQuality = lerpedLightParameters.shadowQuality;
+					mixedLightParameters.affectDiffuse = lerpedLightParameters.affectDiffuse;
+					mixedLightParameters.affectSpecular = lerpedLightParameters.affectSpecular;
+					mixedLightParameters.shadowNormalBias += lerpedLightParameters.shadowNormalBias;
+					mixedLightParameters.ShadowNearClip += lerpedLightParameters.ShadowNearClip;
+					mixedLightParameters.shadowBias += lerpedLightParameters.shadowBias;
+					mixedLightParameters.shadowStrength += lerpedLightParameters.shadowStrength;
+					mixedLightParameters.innerSpotPercent += lerpedLightParameters.innerSpotPercent;
+					mixedLightParameters.maxSmoothness += lerpedLightParameters.maxSmoothness;
 
                     mixedShadowCasterParameters.shadowCasterDistance += Mathf.Lerp(0, data.shadowCasterParameters.shadowCasterDistance, isFading ? 1 : weight);
                     mixedShadowCasterParameters.shadowCasterOffset += Vector2.Lerp(Vector2.zero, data.shadowCasterParameters.shadowCasterOffset, isFading ? 1 : weight);
@@ -156,8 +164,8 @@ public class CineLightMixer : PlayableBehaviour {
                 }
             }
         }
-        LightEditorUtilities.ApplyLightParameters(light, mixedLightParameters);
-        LightEditorUtilities.ApplyCineLightParameters(cineLight, mixedCineLightParameters);
+		LightingUtilities.ApplyLightParameters(light, mixedLightParameters);
+		LightingUtilities.ApplyCineLightParameters(cineLight, mixedCineLightParameters);
 
         if (globalUseShadowCaster && cineLight.shadowCasterGO == null)
         {

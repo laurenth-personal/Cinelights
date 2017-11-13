@@ -42,6 +42,8 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
         if (property.FindPropertyRelative("type").enumValueIndex == 0) //if spotlight
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("lightAngle"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("innerSpotPercent"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("maxSmoothness"));
 		}
 		
 		// Draw label
@@ -55,13 +57,11 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		if (property.FindPropertyRelative("shadows").enumValueIndex != 0)
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("ShadowNearClip"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowQuality"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadowResolution"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowBias"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowNormalBias"));
         }
-
-
         cullingMask = property.FindPropertyRelative("cullingMask");
 
         // Draw label
@@ -75,7 +75,6 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
         {
             EditorGUILayout.PropertyField(cullingMask);
         }
-
 
         EditorGUI.EndProperty ();
 	}

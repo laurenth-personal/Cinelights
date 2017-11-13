@@ -4,6 +4,8 @@ using System;
 using System.Reflection;
 using UnityEngine;
 using LightUtilities;
+using UnityEngine.Experimental.Rendering.HDPipeline;
+using UnityEngine.Experimental.Rendering;
 #if UNITY_EDITOR
 using UnityEditor;
 #endif
@@ -93,9 +95,9 @@ public class CineLight : MonoBehaviour
         if (LightParentYaw != null && drawGizmo)
         {
             EditorLightingUtilities.DrawCross(LightParentYaw.transform);
-            EditorLightingUtilities.DrawSpotlightGizmo(light.GetComponent<Light>());
-            if (light.GetComponent<Light>().type != LightType.Spot)
-                Debug.Log("light is not a spotlight");
+			EditorLightingUtilities.DrawSpotlightGizmo(light.GetComponent<Light>());
+			if (light.GetComponent<Light>().type != LightType.Spot)
+				Debug.Log("light is not a spotlight");
         }
     }
 #endif
@@ -126,6 +128,9 @@ public class CineLight : MonoBehaviour
         targetedLightSpot.type = LightType.Spot;
         SetLightRotation();
         light.transform.localPosition = new Vector3(0, 0, distance);
+		//HDRP
+		light.AddComponent<HDAdditionalLightData>();
+		light.AddComponent<AdditionalShadowData> ();
     }
 
     public void ApplyShadowCaster()
