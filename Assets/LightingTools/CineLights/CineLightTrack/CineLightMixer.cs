@@ -66,8 +66,9 @@ public class CineLightMixer : PlayableBehaviour {
         neutralLightParameters.colorFilter = mixedLightParameters.colorFilter = Color.black;
         neutralLightParameters.range = mixedLightParameters.range = 0;
         neutralLightParameters.lightAngle = mixedLightParameters.lightAngle = 0;
-        neutralLightParameters.shadowBias = mixedLightParameters.shadowBias = 0;
-        neutralLightParameters.shadowNormalBias = mixedLightParameters.shadowNormalBias = 0;
+        neutralLightParameters.viewBiasMin = mixedLightParameters.viewBiasMin = 0;
+        neutralLightParameters.viewBiasScale = mixedLightParameters.viewBiasScale = 0;
+        neutralLightParameters.normalBias = mixedLightParameters.normalBias = 0;
         neutralLightParameters.ShadowNearClip = mixedLightParameters.ShadowNearClip = 0;
 		neutralLightParameters.shadowStrength = mixedLightParameters.shadowStrength = 0;
 		neutralLightParameters.maxSmoothness = mixedLightParameters.maxSmoothness = 0;
@@ -79,12 +80,14 @@ public class CineLightMixer : PlayableBehaviour {
         neutralCineLightParameters.Roll = 0;
         neutralCineLightParameters.offset = Vector3.zero;
         neutralCineLightParameters.distance = 0;
+        neutralCineLightParameters.drawGizmo = false;
         CineLightParameters mixedCineLightParameters = new CineLightParameters();
         mixedCineLightParameters.Yaw = 0;
         mixedCineLightParameters.Pitch = 0;
         mixedCineLightParameters.Roll = 0;
         mixedCineLightParameters.offset = Vector3.zero;
         mixedCineLightParameters.distance = 0;
+        neutralCineLightParameters.drawGizmo = false;
 
         ShadowCasterParameters mixedShadowCasterParameters = new ShadowCasterParameters();
         mixedShadowCasterParameters.shadowCasterDistance = 0;
@@ -147,9 +150,10 @@ public class CineLightMixer : PlayableBehaviour {
 					mixedLightParameters.shadowQuality = lerpedLightParameters.shadowQuality;
 					mixedLightParameters.affectDiffuse = lerpedLightParameters.affectDiffuse;
 					mixedLightParameters.affectSpecular = lerpedLightParameters.affectSpecular;
-					mixedLightParameters.shadowNormalBias += lerpedLightParameters.shadowNormalBias;
+                    mixedLightParameters.normalBias += lerpedLightParameters.normalBias;
 					mixedLightParameters.ShadowNearClip += lerpedLightParameters.ShadowNearClip;
-					mixedLightParameters.shadowBias += lerpedLightParameters.shadowBias;
+                    mixedLightParameters.viewBiasMin += lerpedLightParameters.viewBiasMin;
+                    mixedLightParameters.viewBiasScale += lerpedLightParameters.viewBiasScale;
 					mixedLightParameters.shadowStrength += lerpedLightParameters.shadowStrength;
 					mixedLightParameters.innerSpotPercent += lerpedLightParameters.innerSpotPercent;
 					mixedLightParameters.maxSmoothness += lerpedLightParameters.maxSmoothness;
@@ -161,6 +165,8 @@ public class CineLightMixer : PlayableBehaviour {
                         globalUseShadowCaster = true;
                     if ( weight > 0.5 || isFading)
                         mixedShadowCasterParameters.useShadowCaster = data.shadowCasterParameters.useShadowCaster;
+                    if (weight > 0.5 || isFading)
+                        mixedCineLightParameters.drawGizmo = data.cinelightParameters.drawGizmo;
                 }
             }
         }

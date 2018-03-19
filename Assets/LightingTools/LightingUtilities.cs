@@ -30,32 +30,6 @@ namespace LightUtilities
     }
 
     [System.Serializable]
-    public enum LightShape
-    {
-        Point = 0,
-        Spot = 1,
-        Directional = 2,
-        Rectangle = 3,
-        Sphere = 4,
-        Line = 5,
-        Disc = 6,
-        Frustum = 7
-    }
-
-    [System.Serializable]
-    public class CascadeParameters
-    {
-        [Range(1, 4)]
-        public int count = 4;
-        [Range(0, 1)]
-        public float split0 = 0.05f;
-        [Range(0, 1)]
-        public float split1 = 0.1f;
-        [Range(0, 1)]
-        public float split2 = 0.2f;
-    }
-
-    [System.Serializable]
 	public class LightParameters
 	{
         public LightParameters() { }
@@ -76,15 +50,15 @@ namespace LightUtilities
 		public float indirectIntensity = 1;
         [Range(0,180)]
         public float lightAngle = 45;
-		public LightShadows shadows = LightShadows.Soft ;
+		public bool shadows = true ;
         public ShadowQuality shadowQuality = ShadowQuality.Medium;
 		[Range(0.01f,10f)]
 		public float ShadowNearClip = 0.1f;
-        public float shadowBias = 0.01f;
-        public float shadowNormalBias = 0.1f;
+        public float viewBiasMin = 0.2f;
+        public float viewBiasScale = 1.0f;
+        public float normalBias = 0.2f;
         public Texture2D lightCookie;
 		public float cookieSize = 5 ;
-        public LightShape shape = LightShape.Point;
 		[Range(0f,100f)]
         public float innerSpotPercent = 40;
         public float length;
@@ -126,110 +100,6 @@ namespace LightUtilities
         public Vector2 shadowCasterOffset = new Vector2(0, 0);
     }
 
-    [System.Serializable]
-    public class SunlightOrientationParameters
-    {
-        [Range(-180f, 180f)]
-        public float yAxis = 0f;
-        [Range(0f, 24f)]
-        public float timeOfDay = 10f;
-        [Range(0f, 90f)]
-        public float lattitude = 35f;
-        [Range(-180f, 180f)]
-        public float Roll = 0.1f;
-    }
-
-        [System.Serializable]
-    public class SunlightParameters
-    {
-        public SunlightAnimationParameters animationParameters = new SunlightAnimationParameters();
-        public SunlightOrientationParameters orientationParameters = new SunlightOrientationParameters();
-        public LightParameters lightParameters = new LightParameters();
-        public ProceduralSkyboxParameters proceduralSkyParameters = new ProceduralSkyboxParameters();
-    }
-
-    [System.Serializable]
-    public enum SunlightAnimationMode
-    {
-        Custom = 0,
-        DayCycle = 1
-    }
-
-    [System.Serializable]
-    public class SunlightAnimationParameters
-    {
-        public bool animate;
-        public SunlightAnimationMode animationMode;
-        public float dayLength = 1;
-        public Gradient colorGradient;
-    }
-
-    [System.Serializable]
-    public class ProceduralSkyboxParameters
-    {
-        [Range(0.01f,1)]
-        public float sunSize = 0.05f;
-        [Range(0.1f,4.5f)]
-        public float atmosphereThickness = 1;
-        public Color skyTint = Color.gray;
-        public Color Ground = Color.gray;
-        [Range(0,8)]
-        public float exposure = 1.5f;
-    }
-
-    [System.Serializable]
-	public class LightSourceMeshParameters
-	{
-		public GameObject lightSourceObject;
-		public ShadowCastingMode meshShadowMode;
-		public bool showObjectInHierarchy;
-	}
-	
-	[System.Serializable]
-	public class LightSourceMaterialsParameters
-	{
-		public bool linkEmissiveIntensityWithLight = true ;
-		public bool linkEmissiveColorWithLight = true ;
-		public float emissiveMultiplier = 1f;
-	}
-
-    [System.Serializable]
-    public class LightSourceAnimationParameters
-    {
-	    public bool enabledFromStart = true ;
-	    public bool enableFunctionalAnimation = false ;
-	    public bool enableSwithOnAnimation = false ;
-	    public bool enableSwithOffAnimation = false ;
-	    public bool enableBreakAnimation = false ;
-
-        public LightAnimationParameters functionalAnimationParameters;
-	    public LightAnimationParameters switchOnAnimationParameters;
-	    public LightAnimationParameters switchOffAnimationParameters;
-	    public LightAnimationParameters breakAnimationParameters;
-    }
-
-    [System.Serializable]
-    public class LightAnimationParameters
-    {
-        public AnimationMode animationMode;
-        public AnimationCurve animationCurve;
-        public AnimationClip animationClip;
-        public NoiseAnimationParameters noiseParameters;
-	    public float animationLength = 1;
-    }
-
-    [System.Serializable]
-    public class NoiseAnimationParameters
-    {
-        public float frequency = 5;
-        public float minimumValue = 0;
-        public float maximumValue = 1;
-        [Range(0.0f, 1.0f)]
-        public float jumpFrequency = 0;
-    }
-
-    public enum AnimationMode {Curve, Noise, AnimationClip }
-
     public static class LightingUtilities
     {
 
@@ -249,28 +119,32 @@ namespace LightUtilities
                 case LightmapPresetBakeType.Mixed: light.lightmapBakeType = LightmapBakeType.Mixed; break;
             }
 #endif
-            light.shadows = lightParameters.shadows;
+            if (lightParameters.shadows)
+                light.shadows = LightShadows.Soft;
+            else
+                light.shadows = LightShadows.None;
             light.shadowStrength = lightParameters.shadowStrength;
             light.shadowNearPlane = lightParameters.ShadowNearClip;
-            light.shadowResolution = (LightShadowResolution)lightParameters.shadowQuality;
-            light.shadowNormalBias = lightParameters.shadowNormalBias;
-            light.shadowBias = lightParameters.shadowBias;
-            light.intensity = lightParameters.intensity;
             light.color = lightParameters.colorFilter;
             light.range = lightParameters.range;
             light.spotAngle = lightParameters.lightAngle;
             light.cookie = lightParameters.lightCookie;
             light.cullingMask = lightParameters.cullingMask;
 
-			additionalLightData.affectDiffuse = lightParameters.affectDiffuse;
-			additionalLightData.affectSpecular = lightParameters.affectSpecular;
-			additionalLightData.maxSmoothness = lightParameters.maxSmoothness;
-			additionalLightData.fadeDistance = lightParameters.fadeDistance;
-			additionalLightData.m_InnerSpotPercent = lightParameters.innerSpotPercent;
+            additionalLightData.affectDiffuse = lightParameters.affectDiffuse;
+            additionalLightData.affectSpecular = lightParameters.affectSpecular;
+            additionalLightData.maxSmoothness = lightParameters.maxSmoothness;
+            additionalLightData.fadeDistance = lightParameters.fadeDistance;
+            additionalLightData.m_InnerSpotPercent = lightParameters.innerSpotPercent;
+            additionalLightData.punctualIntensity = lightParameters.intensity;
 
 			additionalShadowData.shadowFadeDistance = lightParameters.shadowMaxDistance;
 			additionalShadowData.shadowResolution = lightParameters.shadowResolution;
 			additionalShadowData.shadowDimmer = lightParameters.shadowStrength;
+            additionalShadowData.viewBiasMin = lightParameters.viewBiasMin;
+            additionalShadowData.viewBiasScale = lightParameters.viewBiasScale;
+            additionalShadowData.normalBiasMin = lightParameters.normalBias;
+            additionalShadowData.normalBiasMax = lightParameters.normalBias;
         }
 
         public static LightParameters LerpLightParameters(LightParameters from, LightParameters to, float weight)
@@ -286,23 +160,24 @@ namespace LightUtilities
 			lerpLightParameters.maxSmoothness = Mathf.Lerp (from.maxSmoothness, to.maxSmoothness, weight);
 			lerpLightParameters.innerSpotPercent = Mathf.Lerp (from.innerSpotPercent, to.innerSpotPercent, weight);
             
-            if (from.shadows == LightShadows.None && to.shadows != LightShadows.None)
+            if (from.shadows == false && to.shadows != false)
             {
                 lerpLightParameters.shadows = to.shadows;
             }
-            if (from.shadows != LightShadows.None && to.shadows == LightShadows.None)
+            if (from.shadows != false && to.shadows == false)
             {
                 lerpLightParameters.shadows = from.shadows;
             }
-            if (from.shadows == LightShadows.None && to.shadows == LightShadows.None)
+            if (from.shadows == false && to.shadows == false)
             {
-                lerpLightParameters.shadows = LightShadows.None;
+                lerpLightParameters.shadows = false;
             }
 
 			lerpLightParameters.lightCookie = weight > 0.5f ? to.lightCookie : from.lightCookie;
             lerpLightParameters.shadowStrength = Mathf.Lerp(from.shadowStrength, to.shadowStrength, weight);
-            lerpLightParameters.shadowBias = Mathf.Lerp(from.shadowBias, to.shadowBias, weight);
-            lerpLightParameters.shadowNormalBias = Mathf.Lerp(from.shadowNormalBias, to.shadowNormalBias, weight);
+            lerpLightParameters.viewBiasMin = Mathf.Lerp(from.viewBiasMin, to.viewBiasMin, weight);
+            lerpLightParameters.viewBiasScale = Mathf.Lerp(from.viewBiasScale, to.viewBiasScale, weight);
+            lerpLightParameters.normalBias = Mathf.Lerp(from.normalBias, to.normalBias, weight);
             lerpLightParameters.ShadowNearClip = Mathf.Lerp(from.ShadowNearClip, to.ShadowNearClip, weight);
 			lerpLightParameters.shadowResolution = (int)Mathf.Lerp(from.shadowResolution, to.shadowResolution, weight);
 
@@ -327,6 +202,7 @@ namespace LightUtilities
             light.light.transform.localRotation = Quaternion.Euler(0, 180, parameters.Roll + 180);
             light.distance = parameters.distance;
             light.light.transform.localPosition = new Vector3(0, 0, parameters.distance);
+            light.timelineSelected = parameters.drawGizmo;
         }
 
         public static CineLightParameters LerpLightTargetParameters(CineLightParameters from, CineLightParameters to, float weight)
@@ -342,36 +218,6 @@ namespace LightUtilities
             lerpLightTargetParameters.drawGizmo = to.drawGizmo;
 
             return lerpLightTargetParameters;
-        }
-
-        public static SunlightParameters LerpSunlightParameters(SunlightParameters from, SunlightParameters to, float weight)
-        {
-            var lerpSunlightParameters = new SunlightParameters();
-            //Orientation
-            lerpSunlightParameters.orientationParameters.lattitude = Mathf.Lerp(from.orientationParameters.lattitude, to.orientationParameters.lattitude, weight);
-            lerpSunlightParameters.orientationParameters.yAxis = Mathf.Lerp(from.orientationParameters.yAxis, to.orientationParameters.yAxis, weight);
-            lerpSunlightParameters.orientationParameters.timeOfDay = Mathf.Lerp(from.orientationParameters.timeOfDay, to.orientationParameters.timeOfDay, weight);
-
-            lerpSunlightParameters.lightParameters = LerpLightParameters(from.lightParameters, to.lightParameters, weight);
-
-            return lerpSunlightParameters;
-        }
-
-        public static void SetProceduralSkyboxParameters(ProceduralSkyboxParameters skyParameters)
-        {
-            var skyboxMaterial = RenderSettings.skybox;
-            if(skyboxMaterial.shader.name == "Skybox/Procedural")
-            {
-                skyboxMaterial.SetFloat("_SunSize", skyParameters.sunSize);
-                skyboxMaterial.SetFloat("_AtmosphereThickness", skyParameters.atmosphereThickness);
-                skyboxMaterial.SetColor("_SkyTint", skyParameters.skyTint);
-                skyboxMaterial.SetColor("_GroundColor", skyParameters.Ground);
-                skyboxMaterial.SetFloat("_Exposure", skyParameters.exposure);
-            }
-            else
-            {
-                Debug.Log("Skybox material not using Procedural Skybox shader");
-            }
         }
 
     }

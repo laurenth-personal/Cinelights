@@ -15,6 +15,7 @@ public class CineLight : MonoBehaviour
 {
     public string displayName = "Light";
     public bool drawGizmo = true;
+    public float gizmosIntensity;
     public bool linkToCameraRotation;
     [Range(-180, 180)]
     public float Yaw = 0f;
@@ -77,17 +78,17 @@ public class CineLight : MonoBehaviour
 #if UNITY_EDITOR
     private void OnDrawGizmos()
     {
-        if(timelineSelected)
-            Gizmos.color = Handles.color  = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 1f);
-        else
-            Gizmos.color = Handles.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 0.1f);
+        gizmosIntensity = 0.1f;
+        if (timelineSelected)
+            gizmosIntensity = 1.0f;
+        Gizmos.color = Handles.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, gizmosIntensity);
+
         SharedGizmos();
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.color = Handles.color = new Color(Gizmos.color.r, Gizmos.color.g, Gizmos.color.b, 1f);
-        SharedGizmos();
+        gizmosIntensity = 1.0f;
     }
 
     private void SharedGizmos()
@@ -95,9 +96,12 @@ public class CineLight : MonoBehaviour
         if (LightParentYaw != null && drawGizmo)
         {
             EditorLightingUtilities.DrawCross(LightParentYaw.transform);
-			EditorLightingUtilities.DrawSpotlightGizmo(light.GetComponent<Light>());
-			if (light.GetComponent<Light>().type != LightType.Spot)
-				Debug.Log("light is not a spotlight");
+            if (light.GetComponent<Light>().type != LightType.Spot)
+            {
+                Debug.Log("light is not a spotlight");
+                return;
+            }
+	        EditorLightingUtilities.DrawSpotlightGizmo(light.GetComponent<Light>());
         }
     }
 #endif

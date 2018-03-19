@@ -12,14 +12,16 @@ public class ShadowCasterParametersPropertyDrawer : PropertyDrawer
         EditorLightingUtilities.DrawSplitter();
 
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawHeader("Shadowcaster");
+        property.FindPropertyRelative("useShadowCaster").boolValue = EditorLightingUtilities.DrawHeader("Shadowcaster", property.FindPropertyRelative("useShadowCaster").boolValue);
         EditorGUI.indentLevel++;
 
-        EditorGUILayout.PropertyField(property.FindPropertyRelative("useShadowCaster"));
-
-        EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterSize"));
-        EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterDistance"));
-        EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterOffset"));
+        if(property.FindPropertyRelative("useShadowCaster").boolValue)
+        {
+			EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterSize"));
+			EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterDistance"));
+			EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterOffset"));
+           
+        }
 
         EditorGUI.EndProperty();
     }

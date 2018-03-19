@@ -13,7 +13,6 @@ public class CineLightParametersPropertyDrawer : PropertyDrawer
         EditorGUILayout.PropertyField(property.FindPropertyRelative("drawGizmo"));
         EditorLightingUtilities.DrawSplitter();
 
-        #region Rig
         EditorGUI.indentLevel--;
         EditorLightingUtilities.DrawHeader("Rig");
         EditorGUI.indentLevel++;
@@ -27,7 +26,6 @@ public class CineLightParametersPropertyDrawer : PropertyDrawer
         }
         EditorGUILayout.PropertyField(property.FindPropertyRelative("distance"));
         EditorGUILayout.PropertyField(property.FindPropertyRelative("offset"));
-        #endregion
 
         EditorGUI.EndProperty();
     }

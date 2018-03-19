@@ -50,17 +50,18 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		EditorGUILayout.Space();
         EditorGUI.indentLevel--;
         EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Shadows");
+        property.FindPropertyRelative("shadows").boolValue = EditorLightingUtilities.DrawHeader("Shadows", property.FindPropertyRelative("shadows").boolValue);
         EditorGUI.indentLevel++;
         // Draw fields
-        EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadows"));
-		if (property.FindPropertyRelative("shadows").enumValueIndex != 0)
+        //EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadows"));
+		if (property.FindPropertyRelative("shadows").boolValue != false)
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("ShadowNearClip"));
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadowResolution"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowBias"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowNormalBias"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasMin"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasScale"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("normalBias"));
         }
         cullingMask = property.FindPropertyRelative("cullingMask");
 
