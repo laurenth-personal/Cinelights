@@ -13,13 +13,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_NextId: 0
   m_Tracks:
-  - {fileID: 114013839056698486}
+  - {fileID: 114026201926203962}
   m_FixedDuration: 0
   m_EditorSettings:
     m_Framerate: 60
   m_DurationMode: 0
   m_Version: 0
---- !u!114 &114013839056698486
+--- !u!114 &114026201926203962
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -37,16 +37,16 @@ MonoBehaviour:
   m_Parent: {fileID: 11400000}
   m_Children: []
   m_Clips:
-  - m_Start: 0
+  - m_Start: 0.21666666666666667
     m_ClipIn: 0
-    m_Asset: {fileID: 114029422481510764}
+    m_Asset: {fileID: 114719246023383378}
     m_Duration: 5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 114013839056698486}
+    m_ParentTrack: {fileID: 114026201926203962}
     m_EaseInDuration: 1
     m_EaseOutDuration: 0
     m_BlendInDuration: -1
-    m_BlendOutDuration: 1.65
+    m_BlendOutDuration: 2.35
     m_MixInCurve:
       serializedVersion: 2
       m_Curve:
@@ -57,8 +57,8 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
       - serializedVersion: 3
         time: 1
         value: 1
@@ -66,8 +66,77 @@ MonoBehaviour:
         outSlope: 0
         tangentMode: 0
         weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_MixOutCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    m_BlendInCurveMode: 0
+    m_BlendOutCurveMode: 0
+    m_ExposedParameterNames: []
+    m_AnimationCurves: {fileID: 0}
+    m_Recordable: 0
+    m_PostExtrapolationMode: 0
+    m_PreExtrapolationMode: 0
+    m_PostExtrapolationTime: 0
+    m_PreExtrapolationTime: 0.21666666666666667
+    m_DisplayName: Test
+    m_Version: 1
+  - m_Start: 2.8666666666666667
+    m_ClipIn: 0
+    m_Asset: {fileID: 114425878742881288}
+    m_Duration: 5
+    m_TimeScale: 1
+    m_ParentTrack: {fileID: 114026201926203962}
+    m_EaseInDuration: 0
+    m_EaseOutDuration: 0.25
+    m_BlendInDuration: 2.35
+    m_BlendOutDuration: 0.6166666666666671
+    m_MixInCurve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
       m_PreInfinity: 2
       m_PostInfinity: 2
       m_RotationOrder: 4
@@ -106,84 +175,15 @@ MonoBehaviour:
     m_PreExtrapolationTime: 0
     m_DisplayName: displayName
     m_Version: 1
-  - m_Start: 3.35
+  - m_Start: 7.25
     m_ClipIn: 0
-    m_Asset: {fileID: 114930798576294876}
+    m_Asset: {fileID: 114378334625898872}
     m_Duration: 5
     m_TimeScale: 1
-    m_ParentTrack: {fileID: 114013839056698486}
+    m_ParentTrack: {fileID: 114026201926203962}
     m_EaseInDuration: 0
-    m_EaseOutDuration: 1
-    m_BlendInDuration: 1.65
-    m_BlendOutDuration: -1
-    m_MixInCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      - serializedVersion: 3
-        time: 1
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0
-        outWeight: 0
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_MixOutCurve:
-      serializedVersion: 2
-      m_Curve:
-      - serializedVersion: 3
-        time: 0
-        value: 1
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      - serializedVersion: 3
-        time: 1
-        value: 0
-        inSlope: 0
-        outSlope: 0
-        tangentMode: 0
-        weightedMode: 0
-        inWeight: 0.33333334
-        outWeight: 0.33333334
-      m_PreInfinity: 2
-      m_PostInfinity: 2
-      m_RotationOrder: 4
-    m_BlendInCurveMode: 0
-    m_BlendOutCurveMode: 0
-    m_ExposedParameterNames: []
-    m_AnimationCurves: {fileID: 0}
-    m_Recordable: 0
-    m_PostExtrapolationMode: 0
-    m_PreExtrapolationMode: 0
-    m_PostExtrapolationTime: 0.8833333333333329
-    m_PreExtrapolationTime: 0
-    m_DisplayName: Test
-    m_Version: 1
-  - m_Start: 9.233333333333333
-    m_ClipIn: 0
-    m_Asset: {fileID: 114378036713291450}
-    m_Duration: 5
-    m_TimeScale: 1
-    m_ParentTrack: {fileID: 114013839056698486}
-    m_EaseInDuration: 0
-    m_EaseOutDuration: 0
-    m_BlendInDuration: -1
+    m_EaseOutDuration: 0.25
+    m_BlendInDuration: 0.6166666666666671
     m_BlendOutDuration: -1
     m_MixInCurve:
       serializedVersion: 2
@@ -241,11 +241,11 @@ MonoBehaviour:
     m_PostExtrapolationMode: 0
     m_PreExtrapolationMode: 0
     m_PostExtrapolationTime: Infinity
-    m_PreExtrapolationTime: 0.8833333333333329
+    m_PreExtrapolationTime: 0
     m_DisplayName: displayName
     m_Version: 1
   m_Version: 1
---- !u!114 &114029422481510764
+--- !u!114 &114378334625898872
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -260,78 +260,20 @@ MonoBehaviour:
     cinelightParameters:
       displayName: displayName
       linkToCameraRotation: 0
-      Yaw: -38
-      Pitch: 58
+      Yaw: 124
+      Pitch: 51.7
       Roll: 0
-      distance: 2.42
+      distance: 3.5
       offset: {x: 0, y: 0, z: 0}
       drawGizmo: 1
     lightParameters:
       type: 0
       mode: 2
-      range: 3.9
+      range: 10
       useColorTemperature: 0
       colorTemperature: 6500
       colorFilter: {r: 1, g: 1, b: 1, a: 1}
-      intensity: 15
-      indirectIntensity: 1
-      lightAngle: 98.8
-      shadows: 1
-      shadowQuality: 2
-      ShadowNearClip: 0.1
-      viewBiasMin: 0.2
-      viewBiasScale: 1
-      normalBias: 0.2
-      lightCookie: {fileID: 0}
-      cookieSize: 5
-      innerSpotPercent: 76.7
-      length: 0
-      width: 0
-      fadeDistance: 50
-      shadowFadeDistance: 10
-      affectDiffuse: 1
-      affectSpecular: 1
-      shadowStrength: 1
-      shadowMaxDistance: 150
-      cullingMask:
-        serializedVersion: 2
-        m_Bits: 4294967295
-      maxSmoothness: 0.611
-      shadowResolution: 128
-    shadowCasterParameters:
-      useShadowCaster: 0
-      shadowCasterSize: {x: 1, y: 1}
-      shadowCasterDistance: 1
-      shadowCasterOffset: {x: 0, y: 0}
---- !u!114 &114378036713291450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 0}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
-  m_Name: CineLightClip
-  m_EditorClassIdentifier: 
-  lightTargetClip:
-    cinelightParameters:
-      displayName: displayName
-      linkToCameraRotation: 0
-      Yaw: 122
-      Pitch: 16.2
-      Roll: 0
-      distance: 2
-      offset: {x: 0, y: 0, z: 0}
-      drawGizmo: 1
-    lightParameters:
-      type: 0
-      mode: 2
-      range: 8.84
-      useColorTemperature: 0
-      colorTemperature: 6500
-      colorFilter: {r: 1, g: 1, b: 1, a: 1}
-      intensity: 150
+      intensity: 1500
       indirectIntensity: 1
       lightAngle: 45
       shadows: 1
@@ -339,7 +281,7 @@ MonoBehaviour:
       ShadowNearClip: 0.1
       viewBiasMin: 0.2
       viewBiasScale: 1
-      normalBias: 0.2
+      normalBias: 0
       lightCookie: {fileID: 0}
       cookieSize: 5
       innerSpotPercent: 40
@@ -355,13 +297,71 @@ MonoBehaviour:
         serializedVersion: 2
         m_Bits: 4294967295
       maxSmoothness: 1
-      shadowResolution: 128
+      shadowResolution: 256
     shadowCasterParameters:
-      useShadowCaster: 1
+      useShadowCaster: 0
       shadowCasterSize: {x: 1, y: 1}
       shadowCasterDistance: 1
       shadowCasterOffset: {x: 0, y: 0}
---- !u!114 &114930798576294876
+--- !u!114 &114425878742881288
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1085d0e37add9854292c8b9c75bb1144, type: 3}
+  m_Name: CineLightClip
+  m_EditorClassIdentifier: 
+  lightTargetClip:
+    cinelightParameters:
+      displayName: displayName
+      linkToCameraRotation: 0
+      Yaw: 62
+      Pitch: 51.7
+      Roll: 0
+      distance: 3.5
+      offset: {x: 0, y: 0, z: 0}
+      drawGizmo: 1
+    lightParameters:
+      type: 0
+      mode: 2
+      range: 10
+      useColorTemperature: 0
+      colorTemperature: 6500
+      colorFilter: {r: 1, g: 0.5235849, b: 0.5235849, a: 1}
+      intensity: 500
+      indirectIntensity: 1
+      lightAngle: 45
+      shadows: 1
+      shadowQuality: 2
+      ShadowNearClip: 0.1
+      viewBiasMin: 0.2
+      viewBiasScale: 1
+      normalBias: 0
+      lightCookie: {fileID: 0}
+      cookieSize: 5
+      innerSpotPercent: 40
+      length: 0
+      width: 0
+      fadeDistance: 50
+      shadowFadeDistance: 10
+      affectDiffuse: 1
+      affectSpecular: 1
+      shadowStrength: 1
+      shadowMaxDistance: 150
+      cullingMask:
+        serializedVersion: 2
+        m_Bits: 4294967295
+      maxSmoothness: 1
+      shadowResolution: 256
+    shadowCasterParameters:
+      useShadowCaster: 0
+      shadowCasterSize: {x: 1, y: 1}
+      shadowCasterDistance: 1
+      shadowCasterOffset: {x: 0, y: 0}
+--- !u!114 &114719246023383378
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -376,38 +376,38 @@ MonoBehaviour:
     cinelightParameters:
       displayName: Test
       linkToCameraRotation: 0
-      Yaw: 89
-      Pitch: 63
+      Yaw: 32
+      Pitch: 32.3
       Roll: 0
-      distance: 2
+      distance: 5.6
       offset: {x: 0, y: 0, z: 0}
-      drawGizmo: 0
+      drawGizmo: 1
     lightParameters:
       type: 0
       mode: 2
       range: 8
       useColorTemperature: 0
       colorTemperature: 6500
-      colorFilter: {r: 1, g: 0.5735294, b: 0.5735294, a: 1}
-      intensity: 15000
+      colorFilter: {r: 1, g: 1, b: 1, a: 1}
+      intensity: 2000
       indirectIntensity: 1
-      lightAngle: 45
+      lightAngle: 48.4
       shadows: 1
       shadowQuality: 2
       ShadowNearClip: 0.1
-      viewBiasMin: 0.2
-      viewBiasScale: 1
-      normalBias: 0.2
+      viewBiasMin: 0
+      viewBiasScale: 1.5
+      normalBias: 0
       lightCookie: {fileID: 0}
       cookieSize: 5
-      innerSpotPercent: 100
+      innerSpotPercent: 84.5
       length: 0
       width: 0
       fadeDistance: 50
       shadowFadeDistance: 10
       affectDiffuse: 1
       affectSpecular: 1
-      shadowStrength: 0
+      shadowStrength: 1
       shadowMaxDistance: 150
       cullingMask:
         serializedVersion: 2

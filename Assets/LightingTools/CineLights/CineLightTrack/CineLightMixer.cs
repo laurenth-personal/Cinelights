@@ -58,36 +58,11 @@ public class CineLightMixer : PlayableBehaviour {
 
         light = cineLight.GetComponentInChildren<Light>();
 
-        var neutralLightParameters = new LightParameters();
-        var mixedLightParameters = new LightParameters();
-        neutralLightParameters.type = mixedLightParameters.type = LightType.Spot;
-        neutralLightParameters.intensity = mixedLightParameters.intensity = 0;
-        neutralLightParameters.indirectIntensity = mixedLightParameters.indirectIntensity = 0;
-        neutralLightParameters.colorFilter = mixedLightParameters.colorFilter = Color.black;
-        neutralLightParameters.range = mixedLightParameters.range = 0;
-        neutralLightParameters.lightAngle = mixedLightParameters.lightAngle = 0;
-        neutralLightParameters.viewBiasMin = mixedLightParameters.viewBiasMin = 0;
-        neutralLightParameters.viewBiasScale = mixedLightParameters.viewBiasScale = 0;
-        neutralLightParameters.normalBias = mixedLightParameters.normalBias = 0;
-        neutralLightParameters.ShadowNearClip = mixedLightParameters.ShadowNearClip = 0;
-		neutralLightParameters.shadowStrength = mixedLightParameters.shadowStrength = 0;
-		neutralLightParameters.maxSmoothness = mixedLightParameters.maxSmoothness = 0;
-		neutralLightParameters.innerSpotPercent = mixedLightParameters.innerSpotPercent = 0;
+        var neutralLightParameters = new LightParameters(LightType.Spot, LightmapPresetBakeType.Realtime, true);
+        var mixedLightParameters = new LightParameters(LightType.Spot, LightmapPresetBakeType.Realtime, true);
 
-        CineLightParameters neutralCineLightParameters = new CineLightParameters();
-        neutralCineLightParameters.Yaw = 0;
-        neutralCineLightParameters.Pitch = 0;
-        neutralCineLightParameters.Roll = 0;
-        neutralCineLightParameters.offset = Vector3.zero;
-        neutralCineLightParameters.distance = 0;
-        neutralCineLightParameters.drawGizmo = false;
-        CineLightParameters mixedCineLightParameters = new CineLightParameters();
-        mixedCineLightParameters.Yaw = 0;
-        mixedCineLightParameters.Pitch = 0;
-        mixedCineLightParameters.Roll = 0;
-        mixedCineLightParameters.offset = Vector3.zero;
-        mixedCineLightParameters.distance = 0;
-        neutralCineLightParameters.drawGizmo = false;
+        CineLightParameters neutralCineLightParameters = new CineLightParameters(true);
+        CineLightParameters mixedCineLightParameters = new CineLightParameters(true);
 
         ShadowCasterParameters mixedShadowCasterParameters = new ShadowCasterParameters();
         mixedShadowCasterParameters.shadowCasterDistance = 0;
@@ -155,8 +130,11 @@ public class CineLightMixer : PlayableBehaviour {
                     mixedLightParameters.viewBiasMin += lerpedLightParameters.viewBiasMin;
                     mixedLightParameters.viewBiasScale += lerpedLightParameters.viewBiasScale;
 					mixedLightParameters.shadowStrength += lerpedLightParameters.shadowStrength;
-					mixedLightParameters.innerSpotPercent += lerpedLightParameters.innerSpotPercent;
+                    mixedLightParameters.shadowResolution += lerpedLightParameters.shadowResolution;
+                    mixedLightParameters.innerSpotPercent += lerpedLightParameters.innerSpotPercent;
 					mixedLightParameters.maxSmoothness += lerpedLightParameters.maxSmoothness;
+                    mixedLightParameters.fadeDistance += lerpedLightParameters.fadeDistance;
+                    mixedLightParameters.shadowFadeDistance += lerpedLightParameters.shadowFadeDistance;
 
                     mixedShadowCasterParameters.shadowCasterDistance += Mathf.Lerp(0, data.shadowCasterParameters.shadowCasterDistance, isFading ? 1 : weight);
                     mixedShadowCasterParameters.shadowCasterOffset += Vector2.Lerp(Vector2.zero, data.shadowCasterParameters.shadowCasterOffset, isFading ? 1 : weight);
@@ -164,9 +142,11 @@ public class CineLightMixer : PlayableBehaviour {
                     if (data.shadowCasterParameters.useShadowCaster == true)
                         globalUseShadowCaster = true;
                     if ( weight > 0.5 || isFading)
+                    {
                         mixedShadowCasterParameters.useShadowCaster = data.shadowCasterParameters.useShadowCaster;
-                    if (weight > 0.5 || isFading)
                         mixedCineLightParameters.drawGizmo = data.cinelightParameters.drawGizmo;
+                        mixedLightParameters.lightCookie = data.lightParameters.lightCookie;
+                    }
                 }
             }
         }

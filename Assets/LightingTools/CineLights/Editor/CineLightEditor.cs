@@ -61,6 +61,8 @@ public class CineLightEditor : Editor
 	public SerializedProperty affectSpecular;
 	public SerializedProperty fadeDistance;
 
+    public HDAdditionalLightData additionalLightData;
+
 	//AdditionalShadowSettings
 	public SerializedProperty shadowResolution;
 	public SerializedProperty shadowFadeDistance;
@@ -156,6 +158,8 @@ public class CineLightEditor : Editor
         normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
 
         InitShadowCasterSerializedObject();
+
+        additionalLightData = (HDAdditionalLightData)m_SerializedAdditionalLightData.targetObject;
     }
 
     void InitShadowCasterSerializedObject()
@@ -233,7 +237,13 @@ public class CineLightEditor : Editor
             if(useColorTemperature.boolValue)
                 EditorGUILayout.PropertyField(colorTemperature);
 			EditorGUILayout.PropertyField(color);
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(intensity);
+            if (EditorGUI.EndChangeCheck())
+            {
+                m_SerializedAdditionalLightData.ApplyModifiedProperties();
+                additionalLightData.ConvertPhysicalLightIntensityToLightIntensity();
+            }
             EditorGUILayout.PropertyField(bounceIntensity);
             EditorGUILayout.PropertyField(range);
             EditorGUILayout.PropertyField(lightmapping);

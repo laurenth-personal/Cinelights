@@ -190,8 +190,8 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 315689271}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1, z: -10}
+  m_LocalRotation: {x: 0.22400947, y: 0.6974441, z: -0.24617001, w: 0.6346589}
+  m_LocalPosition: {x: -3.7842045, y: 3.9878166, z: -0.15454035}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -671,8 +671,8 @@ MonoBehaviour:
   drawGizmo: 1
   gizmosIntensity: 0.1
   linkToCameraRotation: 0
-  Yaw: 79
-  Pitch: 23
+  Yaw: 93
+  Pitch: 32.7
   Roll: 0
   offset: {x: 0, y: 0, z: 0}
   distance: 2
@@ -794,7 +794,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1344088239}
-  m_LocalRotation: {x: -0.19936793, y: 0, z: 0, w: 0.9799247}
+  m_LocalRotation: {x: -0.2815042, y: 0, z: 0, w: 0.95956}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -834,7 +834,9 @@ PlayableDirector:
   m_SceneBindings:
   - key: {fileID: 0}
     value: {fileID: 728878314}
-  - key: {fileID: 114013839056698486, guid: ec5a0799e6cec451ea8a04feff20ad8f, type: 2}
+  - key: {fileID: 0}
+    value: {fileID: 0}
+  - key: {fileID: 114026201926203962, guid: ec5a0799e6cec451ea8a04feff20ad8f, type: 2}
     value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
@@ -884,7 +886,7 @@ Transform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &1416316214
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416316212}
@@ -932,7 +934,7 @@ MonoBehaviour:
     data: 000000000000803f
 --- !u!114 &1416316215
 MonoBehaviour:
-  m_ObjectHideFlags: 0
+  m_ObjectHideFlags: 2
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1416316212}
@@ -943,7 +945,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   m_Version: 1
   directionalIntensity: 3.1415927
-  punctualIntensity: 600
+  punctualIntensity: 890
   areaIntensity: 200
   m_InnerSpotPercent: 85.1
   lightDimmer: 1
@@ -971,7 +973,7 @@ Light:
   serializedVersion: 8
   m_Type: 0
   m_Color: {r: 1, g: 0.36320752, b: 0.36320752, a: 1}
-  m_Intensity: 200
+  m_Intensity: 70.823944
   m_Range: 10
   m_SpotAngle: 52
   m_CookieSize: 10
@@ -1077,7 +1079,7 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 2064491681}
-  m_LocalRotation: {x: 0, y: 0.6360782, z: 0, w: 0.7716246}
+  m_LocalRotation: {x: 0, y: 0.72537434, z: 0, w: 0.6883546}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:

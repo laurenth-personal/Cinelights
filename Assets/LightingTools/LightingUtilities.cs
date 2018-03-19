@@ -40,6 +40,31 @@ namespace LightUtilities
             mode = specificBakeMode;
         }
 
+        public LightParameters(LightType specificType, LightmapPresetBakeType specificBakeMode, bool isNeutral)
+        {
+            if (isNeutral)
+            {
+                range = 0;
+                intensity = 0;
+                colorFilter = Color.black;
+                indirectIntensity = 0;
+                lightAngle = 0;
+                innerSpotPercent = 0;
+                cookieSize = 0;
+                ShadowNearClip = 0;
+                shadowStrength = 0;
+                viewBiasMin = 0;
+                viewBiasScale = 0;
+                normalBias = 0;
+                maxSmoothness = 0;
+                fadeDistance = 0;
+                shadowFadeDistance = 0;
+                shadowResolution = 0;
+            }
+            type = specificType;
+            mode = specificBakeMode;
+        }
+
         public LightType type = LightType.Point;
         public LightmapPresetBakeType mode = LightmapPresetBakeType.Mixed;
 		public float range = 8;
@@ -78,6 +103,17 @@ namespace LightUtilities
     [System.Serializable]
     public class CineLightParameters
     {
+        public CineLightParameters() { }
+
+        public CineLightParameters(bool neutral)
+        {
+            Yaw = 0;
+            Pitch = 0;
+            Roll = 0;
+            offset = Vector3.zero;
+            distance = 0;
+        }
+
         public string displayName = "displayName";
         public bool linkToCameraRotation = false;
         [Range(-180f, 180f)]
@@ -123,7 +159,7 @@ namespace LightUtilities
                 light.shadows = LightShadows.Soft;
             else
                 light.shadows = LightShadows.None;
-            light.shadowStrength = lightParameters.shadowStrength;
+            light.shadowStrength = 1;
             light.shadowNearPlane = lightParameters.ShadowNearClip;
             light.color = lightParameters.colorFilter;
             light.range = lightParameters.range;
@@ -137,6 +173,7 @@ namespace LightUtilities
             additionalLightData.fadeDistance = lightParameters.fadeDistance;
             additionalLightData.m_InnerSpotPercent = lightParameters.innerSpotPercent;
             additionalLightData.punctualIntensity = lightParameters.intensity;
+            additionalLightData.ConvertPhysicalLightIntensityToLightIntensity();
 
 			additionalShadowData.shadowFadeDistance = lightParameters.shadowMaxDistance;
 			additionalShadowData.shadowResolution = lightParameters.shadowResolution;
@@ -145,6 +182,7 @@ namespace LightUtilities
             additionalShadowData.viewBiasScale = lightParameters.viewBiasScale;
             additionalShadowData.normalBiasMin = lightParameters.normalBias;
             additionalShadowData.normalBiasMax = lightParameters.normalBias;
+            additionalShadowData.shadowDimmer = lightParameters.shadowStrength;
         }
 
         public static LightParameters LerpLightParameters(LightParameters from, LightParameters to, float weight)
@@ -160,20 +198,16 @@ namespace LightUtilities
 			lerpLightParameters.maxSmoothness = Mathf.Lerp (from.maxSmoothness, to.maxSmoothness, weight);
 			lerpLightParameters.innerSpotPercent = Mathf.Lerp (from.innerSpotPercent, to.innerSpotPercent, weight);
             
-            if (from.shadows == false && to.shadows != false)
-            {
-                lerpLightParameters.shadows = to.shadows;
-            }
-            if (from.shadows != false && to.shadows == false)
-            {
-                lerpLightParameters.shadows = from.shadows;
-            }
             if (from.shadows == false && to.shadows == false)
             {
                 lerpLightParameters.shadows = false;
             }
+            else
+            {
+                lerpLightParameters.shadows = true;
+            }
 
-			lerpLightParameters.lightCookie = weight > 0.5f ? to.lightCookie : from.lightCookie;
+            lerpLightParameters.lightCookie = weight > 0.5f ? to.lightCookie : from.lightCookie;
             lerpLightParameters.shadowStrength = Mathf.Lerp(from.shadowStrength, to.shadowStrength, weight);
             lerpLightParameters.viewBiasMin = Mathf.Lerp(from.viewBiasMin, to.viewBiasMin, weight);
             lerpLightParameters.viewBiasScale = Mathf.Lerp(from.viewBiasScale, to.viewBiasScale, weight);
