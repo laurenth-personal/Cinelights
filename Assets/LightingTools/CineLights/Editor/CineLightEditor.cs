@@ -1,9 +1,6 @@
-﻿using System.Collections;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using System;
-using Object = UnityEngine.Object;
 using LightUtilities;
 using UnityEngine.Experimental.Rendering.HDPipeline;
 using UnityEngine.Experimental.Rendering;
@@ -66,6 +63,7 @@ public class CineLightEditor : Editor
 	//AdditionalShadowSettings
 	public SerializedProperty shadowResolution;
 	public SerializedProperty shadowFadeDistance;
+    public SerializedProperty shadowDimmer;
     public SerializedProperty viewBiasMin;
     public SerializedProperty viewBiasScale;
     public SerializedProperty normalBiasMin;
@@ -117,7 +115,6 @@ public class CineLightEditor : Editor
         useColorTemperature = m_SerializedLight.FindProperty("m_UseColorTemperature");
         shadowsType = m_SerializedLight.FindProperty("m_Shadows.m_Type");
         shadowsQuality = m_SerializedLight.FindProperty("m_Shadows.m_Resolution");
-        //shadowsBias = m_SerializedLight.FindProperty("m_Shadows.m_Bias");
         shadowsNormalBias = m_SerializedLight.FindProperty("m_Shadows.m_NormalBias");
         shadowsNearPlane = m_SerializedLight.FindProperty("m_Shadows.m_NearPlane");
         lightmapping = m_SerializedLight.FindProperty("m_Lightmapping");
@@ -149,13 +146,15 @@ public class CineLightEditor : Editor
 		affectSpecular = m_SerializedAdditionalLightData.FindProperty("affectSpecular");
 		fadeDistance = m_SerializedAdditionalLightData.FindProperty("fadeDistance");
         intensity = m_SerializedAdditionalLightData.FindProperty("punctualIntensity");
+        normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
 
-		shadowResolution = m_SerializedAdditionalShadowData.FindProperty ("shadowResolution");
+        shadowResolution = m_SerializedAdditionalShadowData.FindProperty ("shadowResolution");
         shadowFadeDistance = m_SerializedAdditionalShadowData.FindProperty("shadowFadeDistance");
         viewBiasMin = m_SerializedAdditionalShadowData.FindProperty ("viewBiasMin");
         viewBiasScale = m_SerializedAdditionalShadowData.FindProperty("viewBiasScale");
         normalBiasMin = m_SerializedAdditionalShadowData.FindProperty("normalBiasMin");
         normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
+        shadowDimmer = m_SerializedAdditionalShadowData.FindProperty("shadowDimmer");
 
         InitShadowCasterSerializedObject();
 
@@ -305,6 +304,7 @@ public class CineLightEditor : Editor
 
 			EditorGUILayout.PropertyField(affectDiffuse);
 			EditorGUILayout.PropertyField(affectSpecular);
+            EditorGUILayout.PropertyField(shadowDimmer);
 			EditorGUILayout.PropertyField(fadeDistance);
 			EditorGUILayout.PropertyField(shadowFadeDistance);
 

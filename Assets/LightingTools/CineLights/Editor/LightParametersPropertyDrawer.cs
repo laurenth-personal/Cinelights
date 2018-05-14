@@ -2,7 +2,6 @@
 using UnityEditor;
 using UnityEngine;
 
-// IngredientDrawer
 [CustomPropertyDrawer (typeof (LightParameters))]
 public class LightParametersPropertyDrawer : PropertyDrawer {
 
@@ -58,7 +57,7 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("ShadowNearClip"));
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadowResolution"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"),new GUIContent("Shadow Dimmer"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasMin"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasScale"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("normalBias"));
@@ -74,10 +73,9 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 
         if(cullingMask.isExpanded)
         {
-            EditorGUILayout.PropertyField(cullingMask);
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("affectDiffuse"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("affectSpecular"));
         }
-
         EditorGUI.EndProperty ();
 	}
-
 }

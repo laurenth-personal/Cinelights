@@ -65,6 +65,38 @@ namespace LightUtilities
             mode = specificBakeMode;
         }
 
+        public static LightParameters DeepCopy(LightParameters c)
+        {
+            LightParameters temp = new LightParameters();
+            temp.type = c.type;
+            temp.mode = c.mode;
+            temp.range = c.range;
+            temp.intensity = c.intensity;
+            temp.colorFilter = c.colorFilter;
+            temp.indirectIntensity = c.indirectIntensity;
+            temp.lightAngle = c.lightAngle;
+            temp.shadows = c.shadows;
+            temp.shadowQuality = c.shadowQuality;
+            temp.ShadowNearClip = c.ShadowNearClip;
+            temp.viewBiasMin = c.viewBiasMin;
+            temp.viewBiasScale = c.viewBiasScale;
+            temp.normalBias = c.normalBias;
+            temp.lightCookie = c.lightCookie;
+            temp.cookieSize = c.cookieSize;
+            temp.innerSpotPercent = c.innerSpotPercent;
+            temp.length = c.length;
+            temp.width = c.width;
+            temp.fadeDistance = c.fadeDistance;
+            temp.shadowFadeDistance = c.shadowFadeDistance;
+            temp.affectDiffuse = c.affectDiffuse;
+            temp.affectSpecular = c.affectSpecular;
+            temp.shadowStrength = c.shadowStrength;
+            temp.cullingMask = c.cullingMask;
+            temp.maxSmoothness = c.maxSmoothness;
+            temp.shadowResolution = c.shadowResolution;
+            return temp;
+        }
+
         public LightType type = LightType.Point;
         public LightmapPresetBakeType mode = LightmapPresetBakeType.Mixed;
 		public float range = 8;
@@ -92,6 +124,7 @@ namespace LightUtilities
         public float shadowFadeDistance = 10 ;
         public bool affectDiffuse = true;
         public bool affectSpecular = true;
+        [Range(0,1)]
         public float shadowStrength = 1;
         public float shadowMaxDistance = 150;
         public LayerMask cullingMask = -1 ;
@@ -114,6 +147,20 @@ namespace LightUtilities
             distance = 0;
         }
 
+        public static CineLightParameters DeepCopy(CineLightParameters c)
+        {
+            CineLightParameters temp = new CineLightParameters();
+            temp.Yaw = c.Yaw;
+            temp.Pitch = c.Pitch;
+            temp.Roll = c.Roll;
+            temp.offset = c.offset;
+            temp.distance = c.distance;
+            temp.linkToCameraRotation = c.linkToCameraRotation;
+            temp.displayName = c.displayName;
+            temp.drawGizmo = c.drawGizmo;
+            return temp;
+        }
+
         public string displayName = "displayName";
         public bool linkToCameraRotation = false;
         [Range(-180f, 180f)]
@@ -130,6 +177,26 @@ namespace LightUtilities
     [System.Serializable]
     public class ShadowCasterParameters
     {
+        public ShadowCasterParameters() { }
+
+        public ShadowCasterParameters(bool neutral)
+        {
+            useShadowCaster = false;
+            shadowCasterSize = Vector2.zero;
+            shadowCasterDistance = 0;
+            shadowCasterOffset = Vector2.zero;
+        }
+
+        public static ShadowCasterParameters DeepCopy(ShadowCasterParameters c)
+        {
+            ShadowCasterParameters temp = new ShadowCasterParameters();
+            temp.useShadowCaster = c.useShadowCaster;
+            temp.shadowCasterSize = c.shadowCasterSize;
+            temp.shadowCasterDistance = c.shadowCasterDistance;
+            temp.shadowCasterOffset = c.shadowCasterOffset;
+            return temp;
+        }
+
         public bool useShadowCaster = false;
         public Vector2 shadowCasterSize = new Vector2(1, 1);
         public float shadowCasterDistance = 1;
