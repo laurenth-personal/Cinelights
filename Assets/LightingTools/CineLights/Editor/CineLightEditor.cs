@@ -1,10 +1,9 @@
-﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using System;
-using Object = UnityEngine.Object;
-using LightUtilities;
+using EditorLightUtilities;
+using UnityEngine.Experimental.Rendering.HDPipeline;
+using UnityEngine.Experimental.Rendering;
 
 [CustomEditor(typeof(CineLight))]
 public class CineLightEditor : Editor
@@ -18,6 +17,8 @@ public class CineLightEditor : Editor
     SerializedObject m_SerializedLightParentYawTransform;
     SerializedObject m_SerializedLightTransform;
     SerializedObject m_SerializedShadowCasterTransform;
+	SerializedObject m_SerializedAdditionalLightData;
+	SerializedObject m_SerializedAdditionalShadowData;
 
     public SerializedProperty lightParentYawLocalPosition;
     public SerializedProperty lightParentYawLocalRotation;
@@ -40,7 +41,7 @@ public class CineLightEditor : Editor
     public SerializedProperty useColorTemperature;
     public SerializedProperty shadowsType;
     public SerializedProperty shadowsQuality;
-    public SerializedProperty shadowsBias;
+    //public SerializedProperty shadowsBias;
     public SerializedProperty shadowsNormalBias;
     public SerializedProperty shadowsNearPlane;
     public SerializedProperty lightmapping;
@@ -49,6 +50,25 @@ public class CineLightEditor : Editor
     //public SerializedProperty bakedShadowRadius;
     //public SerializedProperty bakedShadowAngle;
     public SerializedProperty cullingMask;
+
+	//HDAdditionalLightSettings
+	public SerializedProperty innerSpotPercent;
+	public SerializedProperty maxSmoothness;
+	public SerializedProperty affectDiffuse;
+	public SerializedProperty affectSpecular;
+	public SerializedProperty fadeDistance;
+
+    public HDAdditionalLightData additionalLightData;
+
+	//AdditionalShadowSettings
+	public SerializedProperty shadowResolution;
+	public SerializedProperty shadowFadeDistance;
+    public SerializedProperty shadowDimmer;
+    public SerializedProperty viewBiasMin;
+    public SerializedProperty viewBiasScale;
+    public SerializedProperty normalBiasMin;
+    public SerializedProperty normalBiasMax;
+    public SerializedProperty contactShadows;
 
     public SerializedProperty yaw;
     public SerializedProperty pitch;
@@ -65,8 +85,6 @@ public class CineLightEditor : Editor
     void OnEnable()
     {
         cineLight = (CineLight)serializedObject.targetObject;
-        lightTargetParameters = serializedObject.FindProperty("lightTargetParameters");
-        lightParameters = serializedObject.FindProperty("lightParameters");
 
         Light light = cineLight.GetComponentInChildren<Light>();
         Transform lightTransform = light.transform;
@@ -78,6 +96,10 @@ public class CineLightEditor : Editor
         m_SerializedLightTransform = new SerializedObject(lightTransform);
         m_SerializedLightParentPitchTransform = new SerializedObject(lightParentPitchTransform);
 
+		//HDRP
+		m_SerializedAdditionalLightData = new SerializedObject(light.gameObject.GetComponent<HDAdditionalLightData>());
+		m_SerializedAdditionalShadowData = new SerializedObject(light.gameObject.GetComponent<AdditionalShadowData>());
+
         yaw = serializedObject.FindProperty("Yaw");
         pitch = serializedObject.FindProperty("Pitch");
         roll = serializedObject.FindProperty("Roll");
@@ -88,13 +110,12 @@ public class CineLightEditor : Editor
         cookie = m_SerializedLight.FindProperty("m_Cookie");
         cookieSize = m_SerializedLight.FindProperty("m_CookieSize");
         color = m_SerializedLight.FindProperty("m_Color");
-        intensity = m_SerializedLight.FindProperty("m_Intensity");
+        //intensity = m_SerializedLight.FindProperty("m_Intensity");
         bounceIntensity = m_SerializedLight.FindProperty("m_BounceIntensity");
         colorTemperature = m_SerializedLight.FindProperty("m_ColorTemperature");
         useColorTemperature = m_SerializedLight.FindProperty("m_UseColorTemperature");
         shadowsType = m_SerializedLight.FindProperty("m_Shadows.m_Type");
         shadowsQuality = m_SerializedLight.FindProperty("m_Shadows.m_Resolution");
-        shadowsBias = m_SerializedLight.FindProperty("m_Shadows.m_Bias");
         shadowsNormalBias = m_SerializedLight.FindProperty("m_Shadows.m_NormalBias");
         shadowsNearPlane = m_SerializedLight.FindProperty("m_Shadows.m_NearPlane");
         lightmapping = m_SerializedLight.FindProperty("m_Lightmapping");
@@ -117,11 +138,29 @@ public class CineLightEditor : Editor
         lightParentYawLocalRotation = m_SerializedLightParentYawTransform.FindProperty("m_LocalRotation");
         lightParentPitchLocalRotation = m_SerializedLightParentPitchTransform.FindProperty("m_LocalRotation");
 
-
         distance = m_SerializedLightTransform.FindProperty("m_LocalPosition.z");
         lightRotation = m_SerializedLightTransform.FindProperty("m_LocalRotation");
 
+		innerSpotPercent = m_SerializedAdditionalLightData.FindProperty("m_InnerSpotPercent");
+		maxSmoothness = m_SerializedAdditionalLightData.FindProperty("maxSmoothness");
+		affectDiffuse = m_SerializedAdditionalLightData.FindProperty("affectDiffuse");
+		affectSpecular = m_SerializedAdditionalLightData.FindProperty("affectSpecular");
+		fadeDistance = m_SerializedAdditionalLightData.FindProperty("fadeDistance");
+        intensity = m_SerializedAdditionalLightData.FindProperty("intensity");
+        normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
+
+        shadowResolution = m_SerializedAdditionalShadowData.FindProperty ("shadowResolution");
+        shadowFadeDistance = m_SerializedAdditionalShadowData.FindProperty("shadowFadeDistance");
+        viewBiasMin = m_SerializedAdditionalShadowData.FindProperty ("viewBiasMin");
+        viewBiasScale = m_SerializedAdditionalShadowData.FindProperty("viewBiasScale");
+        normalBiasMin = m_SerializedAdditionalShadowData.FindProperty("normalBiasMin");
+        normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
+        shadowDimmer = m_SerializedAdditionalShadowData.FindProperty("shadowDimmer");
+        contactShadows = m_SerializedAdditionalShadowData.FindProperty("contactShadows");
+
         InitShadowCasterSerializedObject();
+
+        additionalLightData = (HDAdditionalLightData)m_SerializedAdditionalLightData.targetObject;
     }
 
     void InitShadowCasterSerializedObject()
@@ -145,6 +184,8 @@ public class CineLightEditor : Editor
         m_SerializedLightTransform.Update();
         m_SerializedLightParentPitchTransform.Update();
         m_SerializedLightParentYawTransform.Update();
+		m_SerializedAdditionalLightData.Update ();
+		m_SerializedAdditionalShadowData.Update ();
         if(cineLight.shadowCasterGO != null)
             m_SerializedShadowCasterTransform.Update();
 
@@ -153,9 +194,9 @@ public class CineLightEditor : Editor
 
 
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         //EditorGUI.indentLevel--;
-        yaw.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Rig",yaw.isExpanded);
+        yaw.isExpanded = LightUIUtilities.DrawHeaderFoldout("Rig",yaw.isExpanded);
         EditorGUI.indentLevel++;
 
         if(yaw.isExpanded)
@@ -186,17 +227,24 @@ public class CineLightEditor : Editor
         }
 
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        color.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Light",color.isExpanded);
+        color.isExpanded = LightUIUtilities.DrawHeaderFoldout("Light",color.isExpanded);
         EditorGUI.indentLevel++;
 
         if(color.isExpanded)
         {
-            EditorGUILayout.PropertyField(color);
-            EditorGUILayout.PropertyField(useColorTemperature);
-            EditorGUILayout.PropertyField(colorTemperature);
+			EditorGUILayout.PropertyField(useColorTemperature);
+            if(useColorTemperature.boolValue)
+                EditorGUILayout.PropertyField(colorTemperature);
+			EditorGUILayout.PropertyField(color);
+            EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(intensity);
+            //if (EditorGUI.EndChangeCheck())
+            //{
+            //    m_SerializedAdditionalLightData.ApplyModifiedProperties();
+            //    additionalLightData.ConvertPhysicalLightIntensityToLightIntensity();
+            //}
             EditorGUILayout.PropertyField(bounceIntensity);
             EditorGUILayout.PropertyField(range);
             EditorGUILayout.PropertyField(lightmapping);
@@ -205,16 +253,20 @@ public class CineLightEditor : Editor
                 EditorGUILayout.PropertyField(cookieSize);
         }
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        spotAngle.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Shape",spotAngle.isExpanded);
+        spotAngle.isExpanded = LightUIUtilities.DrawHeaderFoldout("Shape",spotAngle.isExpanded);
         EditorGUI.indentLevel++;
         if(spotAngle.isExpanded)
+		{
             EditorGUILayout.Slider(spotAngle,0,180);
+			EditorGUILayout.Slider (innerSpotPercent, 0, 100);
+			EditorGUILayout.Slider (maxSmoothness, 0, 1);
+		}
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        shadowsType.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Shadows", shadowsType.isExpanded);
+        shadowsType.isExpanded = LightUIUtilities.DrawHeaderFoldout("Shadows", shadowsType.isExpanded);
         EditorGUI.indentLevel++;
 
         if(shadowsType.isExpanded)
@@ -222,18 +274,21 @@ public class CineLightEditor : Editor
             EditorGUILayout.PropertyField(shadowsType);
             if(shadowsType.enumValueIndex > 0)
             {
-                EditorGUILayout.PropertyField(shadowsQuality);
-                EditorGUILayout.PropertyField(shadowsBias);
-                EditorGUILayout.PropertyField(shadowsNormalBias);
-                EditorGUILayout.PropertyField(shadowsNearPlane);
+                //EditorGUILayout.PropertyField(shadowsQuality);
+				EditorGUILayout.PropertyField (shadowResolution);
+				EditorGUILayout.PropertyField(shadowsNearPlane);
+                EditorGUILayout.PropertyField(viewBiasMin);
+                EditorGUILayout.PropertyField(viewBiasScale);
+                EditorGUILayout.PropertyField(normalBiasMin);
+                normalBiasMax = normalBiasMin;
                 //EditorGUILayout.PropertyField(bakedShadowRadius);
                 //EditorGUILayout.PropertyField(bakedShadowAngle);
             }
         }
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        drawGizmo.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Additional Settings",drawGizmo.isExpanded);
+        drawGizmo.isExpanded = LightUIUtilities.DrawHeaderFoldout("Additional Settings",drawGizmo.isExpanded);
         EditorGUI.indentLevel++;
 
         if (drawGizmo.isExpanded)
@@ -248,6 +303,12 @@ public class CineLightEditor : Editor
             }
 
             EditorGUILayout.PropertyField(cullingMask);
+
+			EditorGUILayout.PropertyField(affectDiffuse);
+			EditorGUILayout.PropertyField(affectSpecular);
+            EditorGUILayout.PropertyField(shadowDimmer);
+			EditorGUILayout.PropertyField(fadeDistance);
+			EditorGUILayout.PropertyField(shadowFadeDistance);
 
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(useShadowCaster);
@@ -291,6 +352,8 @@ public class CineLightEditor : Editor
         m_SerializedLightTransform.ApplyModifiedProperties();
         m_SerializedLightParentPitchTransform.ApplyModifiedProperties();
         m_SerializedLightParentYawTransform.ApplyModifiedProperties();
+		m_SerializedAdditionalLightData.ApplyModifiedProperties ();
+		m_SerializedAdditionalShadowData.ApplyModifiedProperties ();
         if (cineLight.shadowCasterGO != null)
             m_SerializedShadowCasterTransform.ApplyModifiedProperties();
     }

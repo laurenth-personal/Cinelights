@@ -1,8 +1,8 @@
-﻿using LightUtilities;
+using LightUtilities;
+using EditorLightUtilities;
 using UnityEditor;
 using UnityEngine;
 
-// IngredientDrawer
 [CustomPropertyDrawer (typeof (LightParameters))]
 public class LightParametersPropertyDrawer : PropertyDrawer {
 
@@ -16,8 +16,8 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		EditorGUI.BeginProperty (position, label, property);
 
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Light");
+        LightUIUtilities.DrawSplitter();
+        LightUIUtilities.DrawHeader("Light");
         EditorGUI.indentLevel++;
 
 		EditorGUILayout.PropertyField (property.FindPropertyRelative ("intensity"));
@@ -36,48 +36,47 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
         // Draw label
         EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Shape");
+        LightUIUtilities.DrawSplitter();
+        LightUIUtilities.DrawHeader("Shape");
         EditorGUI.indentLevel++;
         if (property.FindPropertyRelative("type").enumValueIndex == 0) //if spotlight
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("lightAngle"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("innerSpotPercent"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("maxSmoothness"));
 		}
 		
 		// Draw label
 		EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Shadows");
+        LightUIUtilities.DrawSplitter();
+        property.FindPropertyRelative("shadows").boolValue = LightUIUtilities.DrawHeader("Shadows", property.FindPropertyRelative("shadows").boolValue);
         EditorGUI.indentLevel++;
         // Draw fields
-        EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadows"));
-		if (property.FindPropertyRelative("shadows").enumValueIndex != 0)
+		if (property.FindPropertyRelative("shadows").boolValue != false)
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("ShadowNearClip"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowQuality"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowBias"));
-            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowNormalBias"));
+			EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadowResolution"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowStrength"),new GUIContent("Shadow Dimmer"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasMin"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasScale"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("normalBias"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("contactShadows"));
         }
-
-
         cullingMask = property.FindPropertyRelative("cullingMask");
 
         // Draw label
         EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        cullingMask.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Additional settings",cullingMask.isExpanded);
+        LightUIUtilities.DrawSplitter();
+        cullingMask.isExpanded = LightUIUtilities.DrawHeaderFoldout("Additional settings",cullingMask.isExpanded);
         EditorGUI.indentLevel++;
 
         if(cullingMask.isExpanded)
         {
-            EditorGUILayout.PropertyField(cullingMask);
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("affectDiffuse"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("affectSpecular"));
         }
-
-
         EditorGUI.EndProperty ();
 	}
-
 }
