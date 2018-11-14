@@ -1,4 +1,5 @@
-﻿using LightUtilities;
+using LightUtilities;
+using EditorLightUtilities;
 using UnityEditor;
 using UnityEngine;
 
@@ -15,8 +16,8 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		EditorGUI.BeginProperty (position, label, property);
 
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Light");
+        LightUIUtilities.DrawSplitter();
+        LightUIUtilities.DrawHeader("Light");
         EditorGUI.indentLevel++;
 
 		EditorGUILayout.PropertyField (property.FindPropertyRelative ("intensity"));
@@ -35,8 +36,8 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
         // Draw label
         EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        EditorLightingUtilities.DrawHeader("Shape");
+        LightUIUtilities.DrawSplitter();
+        LightUIUtilities.DrawHeader("Shape");
         EditorGUI.indentLevel++;
         if (property.FindPropertyRelative("type").enumValueIndex == 0) //if spotlight
 		{
@@ -48,11 +49,10 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
 		// Draw label
 		EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        property.FindPropertyRelative("shadows").boolValue = EditorLightingUtilities.DrawHeader("Shadows", property.FindPropertyRelative("shadows").boolValue);
+        LightUIUtilities.DrawSplitter();
+        property.FindPropertyRelative("shadows").boolValue = LightUIUtilities.DrawHeader("Shadows", property.FindPropertyRelative("shadows").boolValue);
         EditorGUI.indentLevel++;
         // Draw fields
-        //EditorGUILayout.PropertyField (property.FindPropertyRelative ("shadows"));
 		if (property.FindPropertyRelative("shadows").boolValue != false)
 		{
 			EditorGUILayout.PropertyField (property.FindPropertyRelative ("ShadowNearClip"));
@@ -61,14 +61,15 @@ public class LightParametersPropertyDrawer : PropertyDrawer {
             EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasMin"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("viewBiasScale"));
             EditorGUILayout.PropertyField(property.FindPropertyRelative("normalBias"));
+            EditorGUILayout.PropertyField(property.FindPropertyRelative("contactShadows"));
         }
         cullingMask = property.FindPropertyRelative("cullingMask");
 
         // Draw label
         EditorGUILayout.Space();
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawSplitter();
-        cullingMask.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Additional settings",cullingMask.isExpanded);
+        LightUIUtilities.DrawSplitter();
+        cullingMask.isExpanded = LightUIUtilities.DrawHeaderFoldout("Additional settings",cullingMask.isExpanded);
         EditorGUI.indentLevel++;
 
         if(cullingMask.isExpanded)

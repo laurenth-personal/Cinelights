@@ -1,7 +1,7 @@
-﻿using System.Collections.Generic;
+using System.Collections.Generic;
 using UnityEngine;
 using UnityEditor;
-using LightUtilities;
+using EditorLightUtilities;
 using UnityEngine.Experimental.Rendering.HDPipeline;
 using UnityEngine.Experimental.Rendering;
 
@@ -68,6 +68,7 @@ public class CineLightEditor : Editor
     public SerializedProperty viewBiasScale;
     public SerializedProperty normalBiasMin;
     public SerializedProperty normalBiasMax;
+    public SerializedProperty contactShadows;
 
     public SerializedProperty yaw;
     public SerializedProperty pitch;
@@ -145,7 +146,7 @@ public class CineLightEditor : Editor
 		affectDiffuse = m_SerializedAdditionalLightData.FindProperty("affectDiffuse");
 		affectSpecular = m_SerializedAdditionalLightData.FindProperty("affectSpecular");
 		fadeDistance = m_SerializedAdditionalLightData.FindProperty("fadeDistance");
-        intensity = m_SerializedAdditionalLightData.FindProperty("punctualIntensity");
+        intensity = m_SerializedAdditionalLightData.FindProperty("intensity");
         normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
 
         shadowResolution = m_SerializedAdditionalShadowData.FindProperty ("shadowResolution");
@@ -155,6 +156,7 @@ public class CineLightEditor : Editor
         normalBiasMin = m_SerializedAdditionalShadowData.FindProperty("normalBiasMin");
         normalBiasMax = m_SerializedAdditionalShadowData.FindProperty("normalBiasMax");
         shadowDimmer = m_SerializedAdditionalShadowData.FindProperty("shadowDimmer");
+        contactShadows = m_SerializedAdditionalShadowData.FindProperty("contactShadows");
 
         InitShadowCasterSerializedObject();
 
@@ -192,9 +194,9 @@ public class CineLightEditor : Editor
 
 
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         //EditorGUI.indentLevel--;
-        yaw.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Rig",yaw.isExpanded);
+        yaw.isExpanded = LightUIUtilities.DrawHeaderFoldout("Rig",yaw.isExpanded);
         EditorGUI.indentLevel++;
 
         if(yaw.isExpanded)
@@ -225,9 +227,9 @@ public class CineLightEditor : Editor
         }
 
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        color.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Light",color.isExpanded);
+        color.isExpanded = LightUIUtilities.DrawHeaderFoldout("Light",color.isExpanded);
         EditorGUI.indentLevel++;
 
         if(color.isExpanded)
@@ -238,11 +240,11 @@ public class CineLightEditor : Editor
 			EditorGUILayout.PropertyField(color);
             EditorGUI.BeginChangeCheck();
             EditorGUILayout.PropertyField(intensity);
-            if (EditorGUI.EndChangeCheck())
-            {
-                m_SerializedAdditionalLightData.ApplyModifiedProperties();
-                additionalLightData.ConvertPhysicalLightIntensityToLightIntensity();
-            }
+            //if (EditorGUI.EndChangeCheck())
+            //{
+            //    m_SerializedAdditionalLightData.ApplyModifiedProperties();
+            //    additionalLightData.ConvertPhysicalLightIntensityToLightIntensity();
+            //}
             EditorGUILayout.PropertyField(bounceIntensity);
             EditorGUILayout.PropertyField(range);
             EditorGUILayout.PropertyField(lightmapping);
@@ -251,9 +253,9 @@ public class CineLightEditor : Editor
                 EditorGUILayout.PropertyField(cookieSize);
         }
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        spotAngle.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Shape",spotAngle.isExpanded);
+        spotAngle.isExpanded = LightUIUtilities.DrawHeaderFoldout("Shape",spotAngle.isExpanded);
         EditorGUI.indentLevel++;
         if(spotAngle.isExpanded)
 		{
@@ -262,9 +264,9 @@ public class CineLightEditor : Editor
 			EditorGUILayout.Slider (maxSmoothness, 0, 1);
 		}
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        shadowsType.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Shadows", shadowsType.isExpanded);
+        shadowsType.isExpanded = LightUIUtilities.DrawHeaderFoldout("Shadows", shadowsType.isExpanded);
         EditorGUI.indentLevel++;
 
         if(shadowsType.isExpanded)
@@ -284,9 +286,9 @@ public class CineLightEditor : Editor
             }
         }
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
         EditorGUI.indentLevel--;
-        drawGizmo.isExpanded = EditorLightingUtilities.DrawHeaderFoldout("Additional Settings",drawGizmo.isExpanded);
+        drawGizmo.isExpanded = LightUIUtilities.DrawHeaderFoldout("Additional Settings",drawGizmo.isExpanded);
         EditorGUI.indentLevel++;
 
         if (drawGizmo.isExpanded)

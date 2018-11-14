@@ -1,5 +1,6 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
+using EditorLightUtilities;
 using LightUtilities;
 
 [CustomPropertyDrawer(typeof(CineLightParameters))]
@@ -11,10 +12,10 @@ public class CineLightParametersPropertyDrawer : PropertyDrawer
 
         EditorGUILayout.PropertyField(property.FindPropertyRelative("displayName"));
         EditorGUILayout.PropertyField(property.FindPropertyRelative("drawGizmo"));
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
 
         EditorGUI.indentLevel--;
-        EditorLightingUtilities.DrawHeader("Rig");
+        LightUIUtilities.DrawHeader("Rig");
         EditorGUI.indentLevel++;
 
         EditorGUILayout.PropertyField(property.FindPropertyRelative("linkToCameraRotation"));

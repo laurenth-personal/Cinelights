@@ -1,6 +1,7 @@
-﻿using UnityEditor;
+using UnityEditor;
 using UnityEngine;
 using LightUtilities;
+using EditorLightUtilities;
 
 [CustomPropertyDrawer(typeof(ShadowCasterParameters))]
 public class ShadowCasterParametersPropertyDrawer : PropertyDrawer
@@ -9,10 +10,10 @@ public class ShadowCasterParametersPropertyDrawer : PropertyDrawer
     {
         EditorGUI.BeginProperty(position, label, property);
 
-        EditorLightingUtilities.DrawSplitter();
+        LightUIUtilities.DrawSplitter();
 
         EditorGUI.indentLevel--;
-        property.FindPropertyRelative("useShadowCaster").boolValue = EditorLightingUtilities.DrawHeader("Shadowcaster", property.FindPropertyRelative("useShadowCaster").boolValue);
+        property.FindPropertyRelative("useShadowCaster").boolValue = LightUIUtilities.DrawHeader("Shadowcaster", property.FindPropertyRelative("useShadowCaster").boolValue);
         EditorGUI.indentLevel++;
 
         if(property.FindPropertyRelative("useShadowCaster").boolValue)
@@ -22,7 +23,6 @@ public class ShadowCasterParametersPropertyDrawer : PropertyDrawer
 			EditorGUILayout.PropertyField(property.FindPropertyRelative("shadowCasterOffset"));
            
         }
-
         EditorGUI.EndProperty();
     }
 }

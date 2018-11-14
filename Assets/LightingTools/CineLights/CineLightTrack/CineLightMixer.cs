@@ -1,13 +1,11 @@
 using UnityEngine;
 using UnityEngine.Playables;
-using UnityEngine.UI;
 using System.Collections.Generic;
 using LightUtilities;
 
 public class CineLightMixer : PlayableBehaviour {
 
     // Called each frame the mixer is active, after inputs are processed
-
     [HideInInspector][SerializeField]
     public GameObject lightTargetGO;
     public Transform lightTransform;
@@ -155,7 +153,7 @@ public class CineLightMixer : PlayableBehaviour {
         mixedLightParameters.mode = LightmapPresetBakeType.Realtime;
 
         LightingUtilities.ApplyLightParameters(light, mixedLightParameters);
-		LightingUtilities.ApplyCineLightParameters(cineLight, mixedCineLightParameters);
+		CineLightUtilities.ApplyCineLightParameters(cineLight, mixedCineLightParameters);
 
         if (globalUseShadowCaster && cineLight.shadowCasterGO == null)
         {
@@ -243,6 +241,7 @@ public class CineLightMixer : PlayableBehaviour {
             mixedShadowCasterParameters.useShadowCaster = toShadowCasterParameters.useShadowCaster;
             mixedCineLightParameters.drawGizmo = toCineLightParameters.drawGizmo;
             mixedLightParameters.lightCookie = toLightParameters.lightCookie;
+            mixedLightParameters.contactShadows = toLightParameters.contactShadows;
         }            
     }
 
@@ -307,6 +306,7 @@ public class CineLightMixer : PlayableBehaviour {
                         mixedShadowCasterParameters.useShadowCaster = data.shadowCasterParameters.useShadowCaster;
                         mixedCineLightParameters.drawGizmo = data.cinelightParameters.drawGizmo;
                         mixedLightParameters.lightCookie = data.lightParameters.lightCookie;
+                        mixedLightParameters.contactShadows = data.lightParameters.contactShadows;
                     }
                 }
             }

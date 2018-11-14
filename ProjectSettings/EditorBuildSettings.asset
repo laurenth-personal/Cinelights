@@ -4,4 +4,8 @@
 EditorBuildSettings:
   m_ObjectHideFlags: 0
   serializedVersion: 2
-  m_Scenes: []
+  m_Scenes:
+  - enabled: 1
+    path: Assets/Scenes/Challenger_Cinelights.unity
+    guid: 739460726a6ced6478477086537533a3
+  m_configObjects: {}
