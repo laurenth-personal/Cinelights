@@ -1,7 +1,8 @@
 # Cinelights
-Light entity dedicated to cinematic lighting.
+Light entity and timeline track dedicated to cinematic lighting with HD Render Pipeline.
 
-Tested in Unity 2018.1b10
+UPDATE :
+Tested in Unity 2018.3.0b8 with HD Render Pipeline 4.1.0
 
 # How to use
 
