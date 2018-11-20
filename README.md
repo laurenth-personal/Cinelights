@@ -2,9 +2,12 @@
 Light entity and timeline track dedicated to cinematic lighting with HD Render Pipeline.
 
 UPDATE :
-Tested in Unity 2018.3.0b8 with HD Render Pipeline 4.1.0
+Scripts are now outside of Assets, they are packages. 
+In github they are referenced as submodules (if you use the download button you need to download them separately).
+Downloading this project now only downloads an example project that uses the packages LightingTools.Core and LightingTools.CineLights.
+Tested in Unity 2018.3.0b8 with HD Render Pipeline 4.2.0
 
-# How to use
+# How to use the Cine Lights
 
 1. Entity
 
