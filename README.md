@@ -1,5 +1,5 @@
 # Cinelights
-Light entity and timeline track dedicated to cinematic lighting with HD Render Pipeline.
+Example project using LightingTools.Core and LightingTools.CineLights for cinematic lighting with HD Render Pipeline in Unity 2018.3.0b08+ versions.
 
 UPDATE :
 Scripts are now outside of Assets, they are packages. 
