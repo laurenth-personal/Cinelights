@@ -2,9 +2,10 @@
 Example project using LightingTools.Core and LightingTools.CineLights for cinematic lighting with HD Render Pipeline in Unity 2018.3.0b08+ versions.
 
 UPDATE :
-Scripts are now outside of Assets, they are packages. 
+Scripts are no longer living in the projects, they are like features you can opt in by just adding the packages to your project's Packages folder.
 In github they are referenced as submodules (if you use the download button you need to download them separately).
 Downloading this project now only downloads an example project that uses the packages LightingTools.Core and LightingTools.CineLights.
+
 Tested in Unity 2018.3.0b8 with HD Render Pipeline 4.2.0
 
 # How to use the Cine Lights
