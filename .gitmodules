@@ -1,0 +1,6 @@
+[submodule "Packages/LightingTools.Core"]
+	path = Packages/LightingTools.Core
+	url = https://github.com/laurenth-unity/LightingTools.Core.git
+[submodule "Packages/LightingTools.Cinelights"]
+	path = Packages/LightingTools.Cinelights
+	url = https://github.com/laurenth-unity/LightingTools.Cinelights.git
