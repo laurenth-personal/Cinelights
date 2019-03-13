@@ -1,5 +1,5 @@
 # Cinelights
-Example project using (LightingTools.Core)[https://github.com/laurenth-unity/LightingTools.Core] and (LightingTools.CineLights)[https://github.com/laurenth-unity/LightingTools.Cinelights] for cinematic lighting with HD Render Pipeline in Unity 2018.3.0b08+ versions.
+Example project using [LightingTools.Core](https://github.com/laurenth-unity/LightingTools.Core) and [LightingTools.CineLights](https://github.com/laurenth-unity/LightingTools.Cinelights) for cinematic lighting with HD Render Pipeline in Unity 2018.3.0b08+ versions.
 
 UPDATE :
 Scripts are no longer living in the projects, they are like features you can opt in by just adding the packages to your project's Packages folder.
